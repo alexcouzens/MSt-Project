@@ -1,0 +1,42 @@
+---
+title: "CV Plot"
+author: "Alex Couzens"
+date: "13/07/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+CV PLOT
+
+```
+
+
+
+
+
+CV_Data$`Down-sampling Intrger` <- as.character(CV_Data$`Down-sampling Intrger`)
+
+
+##PLOTs
+Plot_CV <- ggplot(CV_Data, aes(fct_rev(`Integer`), `CV`, group=`Variant and VAF`))+geom_line(aes(color=`Variant and VAF`))+geom_point(aes(color=`Variant and VAF`))+theme_classic()+scale_color_manual(values=c("#a4a5a4","#b855c4", "#afb538", "#d83681", "#d49637", "#658cce", "#c6512a", "#47bcd2", "#d14558", "#5ac296", "#e2d0e2", "#047a02", "#7c599f", "#45c900", "#230023", "#378457", "#a7546c", "#886d2d", "#da896b"))+ylab("Coefficient of Variation (%)")+xlab("Down-sampling Integer")
+
+
+
+## Plot <5% vs >5% 
+library(ggpmisc)
+
+##formula for r2
+my.formula <- y ~ x 
+
+Plot_CV_5 <- ggplot(CV_Data_5, aes(x=fct_rev(`Integer`), y=CV, group=Variant, color=Variant))+geom_jitter(width=0.25) +
+  geom_smooth(method = "lm", se=FALSE, formula = my.formula) +
+  stat_poly_eq(formula = my.formula, 
+               aes(label = paste(..eq.label.., ..rr.label.., sep = "~~~")), 
+               parse = TRUE)+labs(color='Variant VAF%')+theme_classic()+xlab("Integer")+ylab("Coefficient of Variation ")
+
+ggsave("Plot_CV_5.jpeg")
+
+## reorder variants by VAF
+CV_Data$`Variant and VAF` <- factor(CV_Data$`Variant and VAF`, levels = c("1.7% - KRAS 38G>A","3.3% - IDH2 c.419G>A", "3.9% - PTPN11 c.1508G>A", "4.3% - TP53 c.380C>T", "4.5% - FLT3 c.2503G>T", "4.7% - RUNX1 c.610C>T", "5.5% - TET2 c.2224C>T", "5.8% - PTPN11 c.179G>T", "6% - CBL c.1126T>C", "6.5% - TP53 c.818G>A", "8.3% - GATA2 c.961C>T", "16.2% - KRAS c.57G>C", "18% - TET2 c.941del", "29.5% - TET2 c.5456T>A", "42.7% - CEBPA c.68dup", "43.4% - CEBPA c.917_949dup", "46.4% - SRSF2 c.284C>A", "46.8% - TET2 c.3640C>T", "50.1% - NPM1 c.860_863dup"))
+
+
