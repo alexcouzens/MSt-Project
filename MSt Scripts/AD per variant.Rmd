@@ -1,0 +1,1720 @@
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+chr4_105234882
+```
+AD_chr4_105234882_0.5 <- subset(AD_2001413_0.5_2, rownames(AD_2001413_0.5_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.5)[1] <- 'AD'
+AD_chr4_105234882_0.5<- t(AD_chr4_105234882_0.5) #transpose
+colnames(AD_chr4_105234882_0.5)[1] <- 'AD'
+AD_chr4_105234882_0.5 <- cbind(AD_chr4_105234882_0.5, new_col = vec)
+colnames(AD_chr4_105234882_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.5)<-c(1:10)
+
+AD_chr4_105234882_0.25 <- subset(AD_2001413_0.25_2, rownames(AD_2001413_0.25_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.25)[1] <- 'AD'
+AD_chr4_105234882_0.25<- t(AD_chr4_105234882_0.25) #transpose
+colnames(AD_chr4_105234882_0.25)[1] <- 'AD'
+AD_chr4_105234882_0.25 <- cbind(AD_chr4_105234882_0.25, new_col = vec2)
+colnames(AD_chr4_105234882_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.25)<-c(11:20)
+
+AD_chr4_105234882_0.14 <- subset(AD_2001413_0.14_2, rownames(AD_2001413_0.14_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.14)[1] <- 'AD'
+AD_chr4_105234882_0.14<- t(AD_chr4_105234882_0.14) #transpose
+colnames(AD_chr4_105234882_0.14)[1] <- 'AD'
+AD_chr4_105234882_0.14 <- cbind(AD_chr4_105234882_0.14, new_col = vec3)
+colnames(AD_chr4_105234882_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.14)<-c(21:30)
+
+AD_chr4_105234882_0.11 <- subset(AD_2001413_0.11_2, rownames(AD_2001413_0.11_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.11)[1] <- 'AD'
+AD_chr4_105234882_0.11<- t(AD_chr4_105234882_0.11) #transpose
+colnames(AD_chr4_105234882_0.11)[1] <- 'AD'
+AD_chr4_105234882_0.11 <- cbind(AD_chr4_105234882_0.11, new_col = vec4)
+colnames(AD_chr4_105234882_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.11)<-c(31:40)
+
+
+AD_chr4_105234882_0.07 <- subset(AD_2001413_0.07_2, rownames(AD_2001413_0.07_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.07)[1] <- 'AD'
+AD_chr4_105234882_0.07<- t(AD_chr4_105234882_0.07) #transpose
+colnames(AD_chr4_105234882_0.07)[1] <- 'AD'
+AD_chr4_105234882_0.07 <- cbind(AD_chr4_105234882_0.07, new_col = vec5)
+colnames(AD_chr4_105234882_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.07)<-c(41:50)
+
+AD_chr4_105234882_0.036 <- subset(AD_2001413_0.036_2, rownames(AD_2001413_0.036_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.036)[1] <- 'AD'
+AD_chr4_105234882_0.036<- t(AD_chr4_105234882_0.036) #transpose
+colnames(AD_chr4_105234882_0.036)[1] <- 'AD'
+AD_chr4_105234882_0.036 <- cbind(AD_chr4_105234882_0.036, new_col = vec6)
+colnames(AD_chr4_105234882_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.036)<-c(51:60)
+
+AD_chr4_105234882_0.018 <- subset(AD_2001413_0.018_2, rownames(AD_2001413_0.018_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.018)[1] <- 'AD'
+AD_chr4_105234882_0.018<- t(AD_chr4_105234882_0.018) #transpose
+colnames(AD_chr4_105234882_0.018)[1] <- 'AD'
+AD_chr4_105234882_0.018 <- cbind(AD_chr4_105234882_0.018, new_col = vec7)
+colnames(AD_chr4_105234882_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.018)<-c(61:70)
+
+AD_chr4_105234882_0.014 <- subset(AD_2001413_0.014_2, rownames(AD_2001413_0.014_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.014)[1] <- 'AD'
+AD_chr4_105234882_0.014<- t(AD_chr4_105234882_0.014) #transpose
+colnames(AD_chr4_105234882_0.014)[1] <- 'AD'
+AD_chr4_105234882_0.014 <- cbind(AD_chr4_105234882_0.014, new_col = vec8)
+colnames(AD_chr4_105234882_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.014)<-c(71:80)
+
+AD_chr4_105234882_0.007 <- subset(AD_2001413_0.007_2, rownames(AD_2001413_0.007_2) %in% 'chr4_105234882')
+row.names(AD_chr4_105234882_0.007)[1] <- 'AD'
+AD_chr4_105234882_0.007<- t(AD_chr4_105234882_0.007) #transpose
+colnames(AD_chr4_105234882_0.007)[1] <- 'AD'
+AD_chr4_105234882_0.007 <- cbind(AD_chr4_105234882_0.007, new_col = vec9)
+colnames(AD_chr4_105234882_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr4_105234882_0.007)<-c(81:90)
+
+ALL_AD_chr4_105234882<-rbind(AD_chr4_105234882_0.5,AD_chr4_105234882_0.25,AD_chr4_105234882_0.14,AD_chr4_105234882_0.11,AD_chr4_105234882_0.07,AD_chr4_105234882_0.036,AD_chr4_105234882_0.018,AD_chr4_105234882_0.014,AD_chr4_105234882_0.007)
+rownames(ALL_AD_chr4_105234882)<-(1:90)
+
+ALL_AF_DP_AD_chr4_105234882<-cbind(ALL_AD_chr4_105234882,ALL_DP_chr4_105234882,ALL_AF_chr4_105234882)
+
+ALL_AF_DP_AD_chr4_105234882.df <- as.data.frame(ALL_AF_DP_AD_chr4_105234882)
+ 
+ALL_AF_DP_AD_chr4_105234882.df$Integer<-as.character(ALL_AF_DP_AD_chr4_105234882.df$Integer)
+ 
+ALL_AF_DP_AD_chr4_105234882.df$VAF<-as.numeric(ALL_AF_DP_AD_chr4_105234882.df$VAF)
+ALL_AF_DP_AD_chr4_105234882.df[is.na(ALL_AF_DP_AD_chr4_105234882.df)] <- 0
+ALL_AF_DP_AD_chr4_105234882.df$DP<-as.character(ALL_AF_DP_AD_chr4_105234882.df$DP)
+ALL_AF_DP_AD_chr4_105234882.df$AD<-as.numeric(ALL_AF_DP_AD_chr4_105234882.df$AD)
+
+
+```{r}
+#chr4_105243615
+```
+AD_chr4_105243615_0.5 <- subset(AD_2001413_0.5_2, rownames(AD_2001413_0.5_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.5)[1] <- 'AD'
+AD_chr4_105243615_0.5<- t(AD_chr4_105243615_0.5) #transpose
+colnames(AD_chr4_105243615_0.5)[1] <- 'AD'
+AD_chr4_105243615_0.5 <- cbind(AD_chr4_105243615_0.5, new_col = vec)
+colnames(AD_chr4_105243615_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.5)<-c(1:10)
+
+AD_chr4_105243615_0.25 <- subset(AD_2001413_0.25_2, rownames(AD_2001413_0.25_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.25)[1] <- 'AD'
+AD_chr4_105243615_0.25<- t(AD_chr4_105243615_0.25) #transpose
+colnames(AD_chr4_105243615_0.25)[1] <- 'AD'
+AD_chr4_105243615_0.25 <- cbind(AD_chr4_105243615_0.25, new_col = vec2)
+colnames(AD_chr4_105243615_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.25)<-c(11:20)
+
+AD_chr4_105243615_0.14 <- subset(AD_2001413_0.14_2, rownames(AD_2001413_0.14_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.14)[1] <- 'AD'
+AD_chr4_105243615_0.14<- t(AD_chr4_105243615_0.14) #transpose
+colnames(AD_chr4_105243615_0.14)[1] <- 'AD'
+AD_chr4_105243615_0.14 <- cbind(AD_chr4_105243615_0.14, new_col = vec3)
+colnames(AD_chr4_105243615_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.14)<-c(21:30)
+
+AD_chr4_105243615_0.11 <- subset(AD_2001413_0.11_2, rownames(AD_2001413_0.11_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.11)[1] <- 'AD'
+AD_chr4_105243615_0.11<- t(AD_chr4_105243615_0.11) #transpose
+colnames(AD_chr4_105243615_0.11)[1] <- 'AD'
+AD_chr4_105243615_0.11 <- cbind(AD_chr4_105243615_0.11, new_col = vec4)
+colnames(AD_chr4_105243615_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.11)<-c(31:40)
+
+
+AD_chr4_105243615_0.07 <- subset(AD_2001413_0.07_2, rownames(AD_2001413_0.07_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.07)[1] <- 'AD'
+AD_chr4_105243615_0.07<- t(AD_chr4_105243615_0.07) #transpose
+colnames(AD_chr4_105243615_0.07)[1] <- 'AD'
+AD_chr4_105243615_0.07 <- cbind(AD_chr4_105243615_0.07, new_col = vec5)
+colnames(AD_chr4_105243615_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.07)<-c(41:50)
+
+AD_chr4_105243615_0.036 <- subset(AD_2001413_0.036_2, rownames(AD_2001413_0.036_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.036)[1] <- 'AD'
+AD_chr4_105243615_0.036<- t(AD_chr4_105243615_0.036) #transpose
+colnames(AD_chr4_105243615_0.036)[1] <- 'AD'
+AD_chr4_105243615_0.036 <- cbind(AD_chr4_105243615_0.036, new_col = vec6)
+colnames(AD_chr4_105243615_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.036)<-c(51:60)
+
+AD_chr4_105243615_0.018 <- subset(AD_2001413_0.018_2, rownames(AD_2001413_0.018_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.018)[1] <- 'AD'
+AD_chr4_105243615_0.018<- t(AD_chr4_105243615_0.018) #transpose
+colnames(AD_chr4_105243615_0.018)[1] <- 'AD'
+AD_chr4_105243615_0.018 <- cbind(AD_chr4_105243615_0.018, new_col = vec7)
+colnames(AD_chr4_105243615_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.018)<-c(61:70)
+
+AD_chr4_105243615_0.014 <- subset(AD_2001413_0.014_2, rownames(AD_2001413_0.014_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.014)[1] <- 'AD'
+AD_chr4_105243615_0.014<- t(AD_chr4_105243615_0.014) #transpose
+colnames(AD_chr4_105243615_0.014)[1] <- 'AD'
+AD_chr4_105243615_0.014 <- cbind(AD_chr4_105243615_0.014, new_col = vec8)
+colnames(AD_chr4_105243615_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.014)<-c(71:80)
+
+AD_chr4_105243615_0.007 <- subset(AD_2001413_0.007_2, rownames(AD_2001413_0.007_2) %in% 'chr4_105243615')
+row.names(AD_chr4_105243615_0.007)[1] <- 'AD'
+AD_chr4_105243615_0.007<- t(AD_chr4_105243615_0.007) #transpose
+colnames(AD_chr4_105243615_0.007)[1] <- 'AD'
+AD_chr4_105243615_0.007 <- cbind(AD_chr4_105243615_0.007, new_col = vec9)
+colnames(AD_chr4_105243615_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr4_105243615_0.007)<-c(81:90)
+
+ALL_AD_chr4_105243615<-rbind(AD_chr4_105243615_0.5,AD_chr4_105243615_0.25,AD_chr4_105243615_0.14,AD_chr4_105243615_0.11,AD_chr4_105243615_0.07,AD_chr4_105243615_0.036,AD_chr4_105243615_0.018,AD_chr4_105243615_0.014,AD_chr4_105243615_0.007)
+rownames(ALL_AD_chr4_105243615)<-(1:90)
+
+ALL_AF_DP_AD_chr4_105243615<-cbind(ALL_AD_chr4_105243615,ALL_DP_chr4_105243615,ALL_AF_chr4_105243615)
+
+ALL_AF_DP_AD_chr4_105243615.df <- as.data.frame(ALL_AF_DP_AD_chr4_105243615)
+ 
+ALL_AF_DP_AD_chr4_105243615.df$Integer<-as.character(ALL_AF_DP_AD_chr4_105243615.df$Integer)
+ 
+ALL_AF_DP_AD_chr4_105243615.df$VAF<-as.numeric(ALL_AF_DP_AD_chr4_105243615.df$VAF)
+ALL_AF_DP_AD_chr4_105243615.df[is.na(ALL_AF_DP_AD_chr4_105243615.df)] <- 0
+ALL_AF_DP_AD_chr4_105243615.df$DP<-as.character(ALL_AF_DP_AD_chr4_105243615.df$DP)
+ALL_AF_DP_AD_chr4_105243615.df$AD<-as.numeric(ALL_AF_DP_AD_chr4_105243615.df$AD)
+
+```{r}
+##chr4_105275966
+```
+AD_chr4_105275966_0.5 <- subset(AD_2001413_0.5_2, rownames(AD_2001413_0.5_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.5)[1] <- 'AD'
+AD_chr4_105275966_0.5<- t(AD_chr4_105275966_0.5) #transpose
+colnames(AD_chr4_105275966_0.5)[1] <- 'AD'
+AD_chr4_105275966_0.5 <- cbind(AD_chr4_105275966_0.5, new_col = vec)
+colnames(AD_chr4_105275966_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.5)<-c(1:10)
+
+AD_chr4_105275966_0.25 <- subset(AD_2001413_0.25_2, rownames(AD_2001413_0.25_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.25)[1] <- 'AD'
+AD_chr4_105275966_0.25<- t(AD_chr4_105275966_0.25) #transpose
+colnames(AD_chr4_105275966_0.25)[1] <- 'AD'
+AD_chr4_105275966_0.25 <- cbind(AD_chr4_105275966_0.25, new_col = vec2)
+colnames(AD_chr4_105275966_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.25)<-c(11:20)
+
+AD_chr4_105275966_0.14 <- subset(AD_2001413_0.14_2, rownames(AD_2001413_0.14_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.14)[1] <- 'AD'
+AD_chr4_105275966_0.14<- t(AD_chr4_105275966_0.14) #transpose
+colnames(AD_chr4_105275966_0.14)[1] <- 'AD'
+AD_chr4_105275966_0.14 <- cbind(AD_chr4_105275966_0.14, new_col = vec3)
+colnames(AD_chr4_105275966_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.14)<-c(21:30)
+
+AD_chr4_105275966_0.11 <- subset(AD_2001413_0.11_2, rownames(AD_2001413_0.11_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.11)[1] <- 'AD'
+AD_chr4_105275966_0.11<- t(AD_chr4_105275966_0.11) #transpose
+colnames(AD_chr4_105275966_0.11)[1] <- 'AD'
+AD_chr4_105275966_0.11 <- cbind(AD_chr4_105275966_0.11, new_col = vec4)
+colnames(AD_chr4_105275966_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.11)<-c(31:40)
+
+
+AD_chr4_105275966_0.07 <- subset(AD_2001413_0.07_2, rownames(AD_2001413_0.07_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.07)[1] <- 'AD'
+AD_chr4_105275966_0.07<- t(AD_chr4_105275966_0.07) #transpose
+colnames(AD_chr4_105275966_0.07)[1] <- 'AD'
+AD_chr4_105275966_0.07 <- cbind(AD_chr4_105275966_0.07, new_col = vec5)
+colnames(AD_chr4_105275966_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.07)<-c(41:50)
+
+AD_chr4_105275966_0.036 <- subset(AD_2001413_0.036_2, rownames(AD_2001413_0.036_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.036)[1] <- 'AD'
+AD_chr4_105275966_0.036<- t(AD_chr4_105275966_0.036) #transpose
+colnames(AD_chr4_105275966_0.036)[1] <- 'AD'
+AD_chr4_105275966_0.036 <- cbind(AD_chr4_105275966_0.036, new_col = vec6)
+colnames(AD_chr4_105275966_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.036)<-c(51:60)
+
+AD_chr4_105275966_0.018 <- subset(AD_2001413_0.018_2, rownames(AD_2001413_0.018_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.018)[1] <- 'AD'
+AD_chr4_105275966_0.018<- t(AD_chr4_105275966_0.018) #transpose
+colnames(AD_chr4_105275966_0.018)[1] <- 'AD'
+AD_chr4_105275966_0.018 <- cbind(AD_chr4_105275966_0.018, new_col = vec7)
+colnames(AD_chr4_105275966_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.018)<-c(61:70)
+
+AD_chr4_105275966_0.014 <- subset(AD_2001413_0.014_2, rownames(AD_2001413_0.014_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.014)[1] <- 'AD'
+AD_chr4_105275966_0.014<- t(AD_chr4_105275966_0.014) #transpose
+colnames(AD_chr4_105275966_0.014)[1] <- 'AD'
+AD_chr4_105275966_0.014 <- cbind(AD_chr4_105275966_0.014, new_col = vec8)
+colnames(AD_chr4_105275966_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.014)<-c(71:80)
+
+AD_chr4_105275966_0.007 <- subset(AD_2001413_0.007_2, rownames(AD_2001413_0.007_2) %in% 'chr4_105275966')
+row.names(AD_chr4_105275966_0.007)[1] <- 'AD'
+AD_chr4_105275966_0.007<- t(AD_chr4_105275966_0.007) #transpose
+colnames(AD_chr4_105275966_0.007)[1] <- 'AD'
+AD_chr4_105275966_0.007 <- cbind(AD_chr4_105275966_0.007, new_col = vec9)
+colnames(AD_chr4_105275966_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr4_105275966_0.007)<-c(81:90)
+
+ALL_AD_chr4_105275966<-rbind(AD_chr4_105275966_0.5,AD_chr4_105275966_0.25,AD_chr4_105275966_0.14,AD_chr4_105275966_0.11,AD_chr4_105275966_0.07,AD_chr4_105275966_0.036,AD_chr4_105275966_0.018,AD_chr4_105275966_0.014,AD_chr4_105275966_0.007)
+rownames(ALL_AD_chr4_105275966)<-(1:90)
+
+ALL_AF_DP_AD_chr4_105275966<-cbind(ALL_AD_chr4_105275966,ALL_DP_chr4_105275966,ALL_AF_chr4_105275966)
+
+ALL_AF_DP_AD_chr4_105275966.df <- as.data.frame(ALL_AF_DP_AD_chr4_105275966)
+ 
+ALL_AF_DP_AD_chr4_105275966.df$Integer<-as.character(ALL_AF_DP_AD_chr4_105275966.df$Integer)
+ 
+ALL_AF_DP_AD_chr4_105275966.df$VAF<-as.numeric(ALL_AF_DP_AD_chr4_105275966.df$VAF)
+ALL_AF_DP_AD_chr4_105275966.df[is.na(ALL_AF_DP_AD_chr4_105275966.df)] <- 0
+ALL_AF_DP_AD_chr4_105275966.df$DP<-as.character(ALL_AF_DP_AD_chr4_105275966.df$DP)
+ALL_AF_DP_AD_chr4_105275966.df$AD<-as.numeric(ALL_AF_DP_AD_chr4_105275966.df$AD)
+
+```{r}
+##chr11_119278196
+```
+AD_chr11_119278196_0.5 <- subset(AD_2001413_0.5_2, rownames(AD_2001413_0.5_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.5)[1] <- 'AD'
+AD_chr11_119278196_0.5<- t(AD_chr11_119278196_0.5) #transpose
+colnames(AD_chr11_119278196_0.5)[1] <- 'AD'
+AD_chr11_119278196_0.5 <- cbind(AD_chr11_119278196_0.5, new_col = vec)
+colnames(AD_chr11_119278196_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.5)<-c(1:10)
+
+AD_chr11_119278196_0.25 <- subset(AD_2001413_0.25_2, rownames(AD_2001413_0.25_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.25)[1] <- 'AD'
+AD_chr11_119278196_0.25<- t(AD_chr11_119278196_0.25) #transpose
+colnames(AD_chr11_119278196_0.25)[1] <- 'AD'
+AD_chr11_119278196_0.25 <- cbind(AD_chr11_119278196_0.25, new_col = vec2)
+colnames(AD_chr11_119278196_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.25)<-c(11:20)
+
+AD_chr11_119278196_0.14 <- subset(AD_2001413_0.14_2, rownames(AD_2001413_0.14_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.14)[1] <- 'AD'
+AD_chr11_119278196_0.14<- t(AD_chr11_119278196_0.14) #transpose
+colnames(AD_chr11_119278196_0.14)[1] <- 'AD'
+AD_chr11_119278196_0.14 <- cbind(AD_chr11_119278196_0.14, new_col = vec3)
+colnames(AD_chr11_119278196_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.14)<-c(21:30)
+
+AD_chr11_119278196_0.11 <- subset(AD_2001413_0.11_2, rownames(AD_2001413_0.11_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.11)[1] <- 'AD'
+AD_chr11_119278196_0.11<- t(AD_chr11_119278196_0.11) #transpose
+colnames(AD_chr11_119278196_0.11)[1] <- 'AD'
+AD_chr11_119278196_0.11 <- cbind(AD_chr11_119278196_0.11, new_col = vec4)
+colnames(AD_chr11_119278196_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.11)<-c(31:40)
+
+
+AD_chr11_119278196_0.07 <- subset(AD_2001413_0.07_2, rownames(AD_2001413_0.07_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.07)[1] <- 'AD'
+AD_chr11_119278196_0.07<- t(AD_chr11_119278196_0.07) #transpose
+colnames(AD_chr11_119278196_0.07)[1] <- 'AD'
+AD_chr11_119278196_0.07 <- cbind(AD_chr11_119278196_0.07, new_col = vec5)
+colnames(AD_chr11_119278196_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.07)<-c(41:50)
+
+AD_chr11_119278196_0.036 <- subset(AD_2001413_0.036_2, rownames(AD_2001413_0.036_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.036)[1] <- 'AD'
+AD_chr11_119278196_0.036<- t(AD_chr11_119278196_0.036) #transpose
+colnames(AD_chr11_119278196_0.036)[1] <- 'AD'
+AD_chr11_119278196_0.036 <- cbind(AD_chr11_119278196_0.036, new_col = vec6)
+colnames(AD_chr11_119278196_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.036)<-c(51:60)
+
+AD_chr11_119278196_0.018 <- subset(AD_2001413_0.018_2, rownames(AD_2001413_0.018_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.018)[1] <- 'AD'
+AD_chr11_119278196_0.018<- t(AD_chr11_119278196_0.018) #transpose
+colnames(AD_chr11_119278196_0.018)[1] <- 'AD'
+AD_chr11_119278196_0.018 <- cbind(AD_chr11_119278196_0.018, new_col = vec7)
+colnames(AD_chr11_119278196_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.018)<-c(61:70)
+
+AD_chr11_119278196_0.014 <- subset(AD_2001413_0.014_2, rownames(AD_2001413_0.014_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.014)[1] <- 'AD'
+AD_chr11_119278196_0.014<- t(AD_chr11_119278196_0.014) #transpose
+colnames(AD_chr11_119278196_0.014)[1] <- 'AD'
+AD_chr11_119278196_0.014 <- cbind(AD_chr11_119278196_0.014, new_col = vec8)
+colnames(AD_chr11_119278196_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.014)<-c(71:80)
+
+AD_chr11_119278196_0.007 <- subset(AD_2001413_0.007_2, rownames(AD_2001413_0.007_2) %in% 'chr11_119278196')
+row.names(AD_chr11_119278196_0.007)[1] <- 'AD'
+AD_chr11_119278196_0.007<- t(AD_chr11_119278196_0.007) #transpose
+colnames(AD_chr11_119278196_0.007)[1] <- 'AD'
+AD_chr11_119278196_0.007 <- cbind(AD_chr11_119278196_0.007, new_col = vec9)
+colnames(AD_chr11_119278196_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr11_119278196_0.007)<-c(81:90)
+
+ALL_AD_chr11_119278196<-rbind(AD_chr11_119278196_0.5,AD_chr11_119278196_0.25,AD_chr11_119278196_0.14,AD_chr11_119278196_0.11,AD_chr11_119278196_0.07,AD_chr11_119278196_0.036,AD_chr11_119278196_0.018,AD_chr11_119278196_0.014,AD_chr11_119278196_0.007)
+rownames(ALL_AD_chr11_119278196)<-(1:90)
+
+ALL_AF_DP_AD_chr11_119278196<-cbind(ALL_AD_chr11_119278196,ALL_DP_chr11_119278196,ALL_AF_chr11_119278196)
+
+ALL_AF_DP_AD_chr11_119278196.df <- as.data.frame(ALL_AF_DP_AD_chr11_119278196)
+ 
+ALL_AF_DP_AD_chr11_119278196.df$Integer<-as.character(ALL_AF_DP_AD_chr11_119278196.df$Integer)
+ 
+ALL_AF_DP_AD_chr11_119278196.df$VAF<-as.numeric(ALL_AF_DP_AD_chr11_119278196.df$VAF)
+ALL_AF_DP_AD_chr11_119278196.df[is.na(ALL_AF_DP_AD_chr11_119278196.df)] <- 0
+ALL_AF_DP_AD_chr11_119278196.df$DP<-as.character(ALL_AF_DP_AD_chr11_119278196.df$DP)
+ALL_AF_DP_AD_chr11_119278196.df$AD<-as.numeric(ALL_AF_DP_AD_chr11_119278196.df$AD)
+
+```{r}
+##chr12_112489084
+```
+
+AD_chr12_112489084_0.5 <- subset(AD_2001413_0.5_2, rownames(AD_2001413_0.5_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.5)[1] <- 'AD'
+AD_chr12_112489084_0.5<- t(AD_chr12_112489084_0.5) #transpose
+colnames(AD_chr12_112489084_0.5)[1] <- 'AD'
+AD_chr12_112489084_0.5 <- cbind(AD_chr12_112489084_0.5, new_col = vec)
+colnames(AD_chr12_112489084_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.5)<-c(1:10)
+
+AD_chr12_112489084_0.25 <- subset(AD_2001413_0.25_2, rownames(AD_2001413_0.25_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.25)[1] <- 'AD'
+AD_chr12_112489084_0.25<- t(AD_chr12_112489084_0.25) #transpose
+colnames(AD_chr12_112489084_0.25)[1] <- 'AD'
+AD_chr12_112489084_0.25 <- cbind(AD_chr12_112489084_0.25, new_col = vec2)
+colnames(AD_chr12_112489084_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.25)<-c(11:20)
+
+AD_chr12_112489084_0.14 <- subset(AD_2001413_0.14_2, rownames(AD_2001413_0.14_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.14)[1] <- 'AD'
+AD_chr12_112489084_0.14<- t(AD_chr12_112489084_0.14) #transpose
+colnames(AD_chr12_112489084_0.14)[1] <- 'AD'
+AD_chr12_112489084_0.14 <- cbind(AD_chr12_112489084_0.14, new_col = vec3)
+colnames(AD_chr12_112489084_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.14)<-c(21:30)
+
+AD_chr12_112489084_0.11 <- subset(AD_2001413_0.11_2, rownames(AD_2001413_0.11_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.11)[1] <- 'AD'
+AD_chr12_112489084_0.11<- t(AD_chr12_112489084_0.11) #transpose
+colnames(AD_chr12_112489084_0.11)[1] <- 'AD'
+AD_chr12_112489084_0.11 <- cbind(AD_chr12_112489084_0.11, new_col = vec4)
+colnames(AD_chr12_112489084_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.11)<-c(31:40)
+
+
+AD_chr12_112489084_0.07 <- subset(AD_2001413_0.07_2, rownames(AD_2001413_0.07_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.07)[1] <- 'AD'
+AD_chr12_112489084_0.07<- t(AD_chr12_112489084_0.07) #transpose
+colnames(AD_chr12_112489084_0.07)[1] <- 'AD'
+AD_chr12_112489084_0.07 <- cbind(AD_chr12_112489084_0.07, new_col = vec5)
+colnames(AD_chr12_112489084_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.07)<-c(41:50)
+
+AD_chr12_112489084_0.036 <- subset(AD_2001413_0.036_2, rownames(AD_2001413_0.036_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.036)[1] <- 'AD'
+AD_chr12_112489084_0.036<- t(AD_chr12_112489084_0.036) #transpose
+colnames(AD_chr12_112489084_0.036)[1] <- 'AD'
+AD_chr12_112489084_0.036 <- cbind(AD_chr12_112489084_0.036, new_col = vec6)
+colnames(AD_chr12_112489084_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.036)<-c(51:60)
+
+AD_chr12_112489084_0.018 <- subset(AD_2001413_0.018_2, rownames(AD_2001413_0.018_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.018)[1] <- 'AD'
+AD_chr12_112489084_0.018<- t(AD_chr12_112489084_0.018) #transpose
+colnames(AD_chr12_112489084_0.018)[1] <- 'AD'
+AD_chr12_112489084_0.018 <- cbind(AD_chr12_112489084_0.018, new_col = vec7)
+colnames(AD_chr12_112489084_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.018)<-c(61:70)
+
+AD_chr12_112489084_0.014 <- subset(AD_2001413_0.014_2, rownames(AD_2001413_0.014_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.014)[1] <- 'AD'
+AD_chr12_112489084_0.014<- t(AD_chr12_112489084_0.014) #transpose
+colnames(AD_chr12_112489084_0.014)[1] <- 'AD'
+AD_chr12_112489084_0.014 <- cbind(AD_chr12_112489084_0.014, new_col = vec8)
+colnames(AD_chr12_112489084_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.014)<-c(71:80)
+
+AD_chr12_112489084_0.007 <- subset(AD_2001413_0.007_2, rownames(AD_2001413_0.007_2) %in% 'chr12_112489084')
+row.names(AD_chr12_112489084_0.007)[1] <- 'AD'
+AD_chr12_112489084_0.007<- t(AD_chr12_112489084_0.007) #transpose
+colnames(AD_chr12_112489084_0.007)[1] <- 'AD'
+AD_chr12_112489084_0.007 <- cbind(AD_chr12_112489084_0.007, new_col = vec9)
+colnames(AD_chr12_112489084_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr12_112489084_0.007)<-c(81:90)
+
+ALL_AD_chr12_112489084<-rbind(AD_chr12_112489084_0.5,AD_chr12_112489084_0.25,AD_chr12_112489084_0.14,AD_chr12_112489084_0.11,AD_chr12_112489084_0.07,AD_chr12_112489084_0.036,AD_chr12_112489084_0.018,AD_chr12_112489084_0.014,AD_chr12_112489084_0.007)
+rownames(ALL_AD_chr12_112489084)<-(1:90)
+
+ALL_AF_DP_AD_chr12_112489084<-cbind(ALL_AD_chr12_112489084,ALL_DP_chr12_112489084,ALL_AF_chr12_112489084)
+
+ALL_AF_DP_AD_chr12_112489084.df <- as.data.frame(ALL_AF_DP_AD_chr12_112489084)
+ 
+ALL_AF_DP_AD_chr12_112489084.df$Integer<-as.character(ALL_AF_DP_AD_chr12_112489084.df$Integer)
+ 
+ALL_AF_DP_AD_chr12_112489084.df$VAF<-as.numeric(ALL_AF_DP_AD_chr12_112489084.df$VAF)
+ALL_AF_DP_AD_chr12_112489084.df[is.na(ALL_AF_DP_AD_chr12_112489084.df)] <- 0
+ALL_AF_DP_AD_chr12_112489084.df$DP<-as.character(ALL_AF_DP_AD_chr12_112489084.df$DP)
+ALL_AF_DP_AD_chr12_112489084.df$AD<-as.numeric(ALL_AF_DP_AD_chr12_112489084.df$AD)
+
+```{r}
+chr17_76736877
+```
+AD_chr17_76736877_0.5 <- subset(AD_2001413_0.5_2, rownames(AD_2001413_0.5_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.5)[1] <- 'AD'
+AD_chr17_76736877_0.5<- t(AD_chr17_76736877_0.5) #transpose
+colnames(AD_chr17_76736877_0.5)[1] <- 'AD'
+AD_chr17_76736877_0.5 <- cbind(AD_chr17_76736877_0.5, new_col = vec)
+colnames(AD_chr17_76736877_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.5)<-c(1:10)
+
+AD_chr17_76736877_0.25 <- subset(AD_2001413_0.25_2, rownames(AD_2001413_0.25_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.25)[1] <- 'AD'
+AD_chr17_76736877_0.25<- t(AD_chr17_76736877_0.25) #transpose
+colnames(AD_chr17_76736877_0.25)[1] <- 'AD'
+AD_chr17_76736877_0.25 <- cbind(AD_chr17_76736877_0.25, new_col = vec2)
+colnames(AD_chr17_76736877_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.25)<-c(11:20)
+
+AD_chr17_76736877_0.14 <- subset(AD_2001413_0.14_2, rownames(AD_2001413_0.14_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.14)[1] <- 'AD'
+AD_chr17_76736877_0.14<- t(AD_chr17_76736877_0.14) #transpose
+colnames(AD_chr17_76736877_0.14)[1] <- 'AD'
+AD_chr17_76736877_0.14 <- cbind(AD_chr17_76736877_0.14, new_col = vec3)
+colnames(AD_chr17_76736877_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.14)<-c(21:30)
+
+AD_chr17_76736877_0.11 <- subset(AD_2001413_0.11_2, rownames(AD_2001413_0.11_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.11)[1] <- 'AD'
+AD_chr17_76736877_0.11<- t(AD_chr17_76736877_0.11) #transpose
+colnames(AD_chr17_76736877_0.11)[1] <- 'AD'
+AD_chr17_76736877_0.11 <- cbind(AD_chr17_76736877_0.11, new_col = vec4)
+colnames(AD_chr17_76736877_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.11)<-c(31:40)
+
+
+AD_chr17_76736877_0.07 <- subset(AD_2001413_0.07_2, rownames(AD_2001413_0.07_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.07)[1] <- 'AD'
+AD_chr17_76736877_0.07<- t(AD_chr17_76736877_0.07) #transpose
+colnames(AD_chr17_76736877_0.07)[1] <- 'AD'
+AD_chr17_76736877_0.07 <- cbind(AD_chr17_76736877_0.07, new_col = vec5)
+colnames(AD_chr17_76736877_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.07)<-c(41:50)
+
+AD_chr17_76736877_0.036 <- subset(AD_2001413_0.036_2, rownames(AD_2001413_0.036_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.036)[1] <- 'AD'
+AD_chr17_76736877_0.036<- t(AD_chr17_76736877_0.036) #transpose
+colnames(AD_chr17_76736877_0.036)[1] <- 'AD'
+AD_chr17_76736877_0.036 <- cbind(AD_chr17_76736877_0.036, new_col = vec6)
+colnames(AD_chr17_76736877_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.036)<-c(51:60)
+
+AD_chr17_76736877_0.018 <- subset(AD_2001413_0.018_2, rownames(AD_2001413_0.018_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.018)[1] <- 'AD'
+AD_chr17_76736877_0.018<- t(AD_chr17_76736877_0.018) #transpose
+colnames(AD_chr17_76736877_0.018)[1] <- 'AD'
+AD_chr17_76736877_0.018 <- cbind(AD_chr17_76736877_0.018, new_col = vec7)
+colnames(AD_chr17_76736877_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.018)<-c(61:70)
+
+AD_chr17_76736877_0.014 <- subset(AD_2001413_0.014_2, rownames(AD_2001413_0.014_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.014)[1] <- 'AD'
+AD_chr17_76736877_0.014<- t(AD_chr17_76736877_0.014) #transpose
+colnames(AD_chr17_76736877_0.014)[1] <- 'AD'
+AD_chr17_76736877_0.014 <- cbind(AD_chr17_76736877_0.014, new_col = vec8)
+colnames(AD_chr17_76736877_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.014)<-c(71:80)
+
+AD_chr17_76736877_0.007 <- subset(AD_2001413_0.007_2, rownames(AD_2001413_0.007_2) %in% 'chr17_76736877')
+row.names(AD_chr17_76736877_0.007)[1] <- 'AD'
+AD_chr17_76736877_0.007<- t(AD_chr17_76736877_0.007) #transpose
+colnames(AD_chr17_76736877_0.007)[1] <- 'AD'
+AD_chr17_76736877_0.007 <- cbind(AD_chr17_76736877_0.007, new_col = vec9)
+colnames(AD_chr17_76736877_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr17_76736877_0.007)<-c(81:90)
+
+ALL_AD_chr17_76736877<-rbind(AD_chr17_76736877_0.5,AD_chr17_76736877_0.25,AD_chr17_76736877_0.14,AD_chr17_76736877_0.11,AD_chr17_76736877_0.07,AD_chr17_76736877_0.036,AD_chr17_76736877_0.018,AD_chr17_76736877_0.014,AD_chr17_76736877_0.007)
+rownames(ALL_AD_chr17_76736877)<-(1:90)
+
+ALL_AF_DP_AD_chr17_76736877<-cbind(ALL_AD_chr17_76736877,ALL_DP_chr17_76736877,ALL_AF_chr17_76736877)
+
+ALL_AF_DP_AD_chr17_76736877.df <- as.data.frame(ALL_AF_DP_AD_chr17_76736877)
+ 
+ALL_AF_DP_AD_chr17_76736877.df$Integer<-as.character(ALL_AF_DP_AD_chr17_76736877.df$Integer)
+ 
+ALL_AF_DP_AD_chr17_76736877.df$VAF<-as.numeric(ALL_AF_DP_AD_chr17_76736877.df$VAF)
+ALL_AF_DP_AD_chr17_76736877.df[is.na(ALL_AF_DP_AD_chr17_76736877.df)] <- 0
+ALL_AF_DP_AD_chr17_76736877.df$DP<-as.character(ALL_AF_DP_AD_chr17_76736877.df$DP)
+ALL_AF_DP_AD_chr17_76736877.df$AD<-as.numeric(ALL_AF_DP_AD_chr17_76736877.df$AD)
+
+```{r}
+##chr21_34859477
+```
+AD_chr21_34859477_0.5 <- subset(AD_2001413_0.5_2, rownames(AD_2001413_0.5_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.5)[1] <- 'AD'
+AD_chr21_34859477_0.5<- t(AD_chr21_34859477_0.5) #transpose
+colnames(AD_chr21_34859477_0.5)[1] <- 'AD'
+AD_chr21_34859477_0.5 <- cbind(AD_chr21_34859477_0.5, new_col = vec)
+colnames(AD_chr21_34859477_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.5)<-c(1:10)
+
+AD_chr21_34859477_0.25 <- subset(AD_2001413_0.25_2, rownames(AD_2001413_0.25_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.25)[1] <- 'AD'
+AD_chr21_34859477_0.25<- t(AD_chr21_34859477_0.25) #transpose
+colnames(AD_chr21_34859477_0.25)[1] <- 'AD'
+AD_chr21_34859477_0.25 <- cbind(AD_chr21_34859477_0.25, new_col = vec2)
+colnames(AD_chr21_34859477_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.25)<-c(11:20)
+
+AD_chr21_34859477_0.14 <- subset(AD_2001413_0.14_2, rownames(AD_2001413_0.14_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.14)[1] <- 'AD'
+AD_chr21_34859477_0.14<- t(AD_chr21_34859477_0.14) #transpose
+colnames(AD_chr21_34859477_0.14)[1] <- 'AD'
+AD_chr21_34859477_0.14 <- cbind(AD_chr21_34859477_0.14, new_col = vec3)
+colnames(AD_chr21_34859477_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.14)<-c(21:30)
+
+AD_chr21_34859477_0.11 <- subset(AD_2001413_0.11_2, rownames(AD_2001413_0.11_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.11)[1] <- 'AD'
+AD_chr21_34859477_0.11<- t(AD_chr21_34859477_0.11) #transpose
+colnames(AD_chr21_34859477_0.11)[1] <- 'AD'
+AD_chr21_34859477_0.11 <- cbind(AD_chr21_34859477_0.11, new_col = vec4)
+colnames(AD_chr21_34859477_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.11)<-c(31:40)
+
+
+AD_chr21_34859477_0.07 <- subset(AD_2001413_0.07_2, rownames(AD_2001413_0.07_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.07)[1] <- 'AD'
+AD_chr21_34859477_0.07<- t(AD_chr21_34859477_0.07) #transpose
+colnames(AD_chr21_34859477_0.07)[1] <- 'AD'
+AD_chr21_34859477_0.07 <- cbind(AD_chr21_34859477_0.07, new_col = vec5)
+colnames(AD_chr21_34859477_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.07)<-c(41:50)
+
+AD_chr21_34859477_0.036 <- subset(AD_2001413_0.036_2, rownames(AD_2001413_0.036_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.036)[1] <- 'AD'
+AD_chr21_34859477_0.036<- t(AD_chr21_34859477_0.036) #transpose
+colnames(AD_chr21_34859477_0.036)[1] <- 'AD'
+AD_chr21_34859477_0.036 <- cbind(AD_chr21_34859477_0.036, new_col = vec6)
+colnames(AD_chr21_34859477_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.036)<-c(51:60)
+
+AD_chr21_34859477_0.018 <- subset(AD_2001413_0.018_2, rownames(AD_2001413_0.018_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.018)[1] <- 'AD'
+AD_chr21_34859477_0.018<- t(AD_chr21_34859477_0.018) #transpose
+colnames(AD_chr21_34859477_0.018)[1] <- 'AD'
+AD_chr21_34859477_0.018 <- cbind(AD_chr21_34859477_0.018, new_col = vec7)
+colnames(AD_chr21_34859477_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.018)<-c(61:70)
+
+AD_chr21_34859477_0.014 <- subset(AD_2001413_0.014_2, rownames(AD_2001413_0.014_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.014)[1] <- 'AD'
+AD_chr21_34859477_0.014<- t(AD_chr21_34859477_0.014) #transpose
+colnames(AD_chr21_34859477_0.014)[1] <- 'AD'
+AD_chr21_34859477_0.014 <- cbind(AD_chr21_34859477_0.014, new_col = vec8)
+colnames(AD_chr21_34859477_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.014)<-c(71:80)
+
+AD_chr21_34859477_0.007 <- subset(AD_2001413_0.007_2, rownames(AD_2001413_0.007_2) %in% 'chr21_34859477')
+row.names(AD_chr21_34859477_0.007)[1] <- 'AD'
+AD_chr21_34859477_0.007<- t(AD_chr21_34859477_0.007) #transpose
+colnames(AD_chr21_34859477_0.007)[1] <- 'AD'
+AD_chr21_34859477_0.007 <- cbind(AD_chr21_34859477_0.007, new_col = vec9)
+colnames(AD_chr21_34859477_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr21_34859477_0.007)<-c(81:90)
+
+ALL_AD_chr21_34859477<-rbind(AD_chr21_34859477_0.5,AD_chr21_34859477_0.25,AD_chr21_34859477_0.14,AD_chr21_34859477_0.11,AD_chr21_34859477_0.07,AD_chr21_34859477_0.036,AD_chr21_34859477_0.018,AD_chr21_34859477_0.014,AD_chr21_34859477_0.007)
+rownames(ALL_AD_chr21_34859477)<-(1:90)
+
+ALL_AF_DP_AD_chr21_34859477<-cbind(ALL_AD_chr21_34859477,ALL_DP_chr21_34859477,ALL_AF_chr21_34859477)
+
+ALL_AF_DP_AD_chr21_34859477.df <- as.data.frame(ALL_AF_DP_AD_chr21_34859477)
+ 
+ALL_AF_DP_AD_chr21_34859477.df$Integer<-as.character(ALL_AF_DP_AD_chr21_34859477.df$Integer)
+ 
+ALL_AF_DP_AD_chr21_34859477.df$VAF<-as.numeric(ALL_AF_DP_AD_chr21_34859477.df$VAF)
+ALL_AF_DP_AD_chr21_34859477.df[is.na(ALL_AF_DP_AD_chr21_34859477.df)] <- 0
+ALL_AF_DP_AD_chr21_34859477.df$DP<-as.character(ALL_AF_DP_AD_chr21_34859477.df$DP)
+ALL_AF_DP_AD_chr21_34859477.df$AD<-as.numeric(ALL_AF_DP_AD_chr21_34859477.df$AD)
+
+```{r}
+##chr3_128483916
+```
+
+AD_chr3_128483916_0.5 <- subset(AD_2001887_0.5_2, rownames(AD_2001887_0.5_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.5)[1] <- 'AD'
+AD_chr3_128483916_0.5<- t(AD_chr3_128483916_0.5) #transpose
+colnames(AD_chr3_128483916_0.5)[1] <- 'AD'
+AD_chr3_128483916_0.5 <- cbind(AD_chr3_128483916_0.5, new_col = vec)
+colnames(AD_chr3_128483916_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.5)<-c(1:10)
+
+AD_chr3_128483916_0.25 <- subset(AD_2001887_0.25_2, rownames(AD_2001887_0.25_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.25)[1] <- 'AD'
+AD_chr3_128483916_0.25<- t(AD_chr3_128483916_0.25) #transpose
+colnames(AD_chr3_128483916_0.25)[1] <- 'AD'
+AD_chr3_128483916_0.25 <- cbind(AD_chr3_128483916_0.25, new_col = vec2)
+colnames(AD_chr3_128483916_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.25)<-c(11:20)
+
+AD_chr3_128483916_0.14 <- subset(AD_2001887_0.14_2, rownames(AD_2001887_0.14_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.14)[1] <- 'AD'
+AD_chr3_128483916_0.14<- t(AD_chr3_128483916_0.14) #transpose
+colnames(AD_chr3_128483916_0.14)[1] <- 'AD'
+AD_chr3_128483916_0.14 <- cbind(AD_chr3_128483916_0.14, new_col = vec3)
+colnames(AD_chr3_128483916_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.14)<-c(21:30)
+
+AD_chr3_128483916_0.11 <- subset(AD_2001887_0.11_2, rownames(AD_2001887_0.11_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.11)[1] <- 'AD'
+AD_chr3_128483916_0.11<- t(AD_chr3_128483916_0.11) #transpose
+colnames(AD_chr3_128483916_0.11)[1] <- 'AD'
+AD_chr3_128483916_0.11 <- cbind(AD_chr3_128483916_0.11, new_col = vec4)
+colnames(AD_chr3_128483916_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.11)<-c(31:40)
+
+
+AD_chr3_128483916_0.07 <- subset(AD_2001887_0.07_2, rownames(AD_2001887_0.07_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.07)[1] <- 'AD'
+AD_chr3_128483916_0.07<- t(AD_chr3_128483916_0.07) #transpose
+colnames(AD_chr3_128483916_0.07)[1] <- 'AD'
+AD_chr3_128483916_0.07 <- cbind(AD_chr3_128483916_0.07, new_col = vec5)
+colnames(AD_chr3_128483916_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.07)<-c(41:50)
+
+AD_chr3_128483916_0.036 <- subset(AD_2001887_0.036_2, rownames(AD_2001887_0.036_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.036)[1] <- 'AD'
+AD_chr3_128483916_0.036<- t(AD_chr3_128483916_0.036) #transpose
+colnames(AD_chr3_128483916_0.036)[1] <- 'AD'
+AD_chr3_128483916_0.036 <- cbind(AD_chr3_128483916_0.036, new_col = vec6)
+colnames(AD_chr3_128483916_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.036)<-c(51:60)
+
+AD_chr3_128483916_0.018 <- subset(AD_2001887_0.018_2, rownames(AD_2001887_0.018_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.018)[1] <- 'AD'
+AD_chr3_128483916_0.018<- t(AD_chr3_128483916_0.018) #transpose
+colnames(AD_chr3_128483916_0.018)[1] <- 'AD'
+AD_chr3_128483916_0.018 <- cbind(AD_chr3_128483916_0.018, new_col = vec7)
+colnames(AD_chr3_128483916_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.018)<-c(61:70)
+
+AD_chr3_128483916_0.014 <- subset(AD_2001887_0.014_2, rownames(AD_2001887_0.014_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.014)[1] <- 'AD'
+AD_chr3_128483916_0.014<- t(AD_chr3_128483916_0.014) #transpose
+colnames(AD_chr3_128483916_0.014)[1] <- 'AD'
+AD_chr3_128483916_0.014 <- cbind(AD_chr3_128483916_0.014, new_col = vec8)
+colnames(AD_chr3_128483916_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.014)<-c(71:80)
+
+AD_chr3_128483916_0.007 <- subset(AD_2001887_0.007_2, rownames(AD_2001887_0.007_2) %in% 'chr3_128483916')
+row.names(AD_chr3_128483916_0.007)[1] <- 'AD'
+AD_chr3_128483916_0.007<- t(AD_chr3_128483916_0.007) #transpose
+colnames(AD_chr3_128483916_0.007)[1] <- 'AD'
+AD_chr3_128483916_0.007 <- cbind(AD_chr3_128483916_0.007, new_col = vec9)
+colnames(AD_chr3_128483916_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr3_128483916_0.007)<-c(81:90)
+
+ALL_AD_chr3_128483916<-rbind(AD_chr3_128483916_0.5,AD_chr3_128483916_0.25,AD_chr3_128483916_0.14,AD_chr3_128483916_0.11,AD_chr3_128483916_0.07,AD_chr3_128483916_0.036,AD_chr3_128483916_0.018,AD_chr3_128483916_0.014,AD_chr3_128483916_0.007)
+rownames(ALL_AD_chr3_128483916)<-(1:90)
+
+ALL_AF_DP_AD_chr3_128483916<-cbind(ALL_AD_chr3_128483916,ALL_DP_chr3_128483916,ALL_AF_chr3_128483916)
+
+ALL_AF_DP_AD_chr3_128483916.df <- as.data.frame(ALL_AF_DP_AD_chr3_128483916)
+ 
+ALL_AF_DP_AD_chr3_128483916.df$Integer<-as.character(ALL_AF_DP_AD_chr3_128483916.df$Integer)
+ 
+ALL_AF_DP_AD_chr3_128483916.df$VAF<-as.numeric(ALL_AF_DP_AD_chr3_128483916.df$VAF)
+ALL_AF_DP_AD_chr3_128483916.df[is.na(ALL_AF_DP_AD_chr3_128483916.df)] <- 0
+ALL_AF_DP_AD_chr3_128483916.df$DP<-as.character(ALL_AF_DP_AD_chr3_128483916.df$DP)
+ALL_AF_DP_AD_chr3_128483916.df$AD<-as.numeric(ALL_AF_DP_AD_chr3_128483916.df$AD)
+
+```{r}
+##chr4_105236166
+```
+AD_chr4_105236166_0.5 <- subset(AD_2001887_0.5_2, rownames(AD_2001887_0.5_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.5)[1] <- 'AD'
+AD_chr4_105236166_0.5<- t(AD_chr4_105236166_0.5) #transpose
+colnames(AD_chr4_105236166_0.5)[1] <- 'AD'
+AD_chr4_105236166_0.5 <- cbind(AD_chr4_105236166_0.5, new_col = vec)
+colnames(AD_chr4_105236166_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.5)<-c(1:10)
+
+AD_chr4_105236166_0.25 <- subset(AD_2001887_0.25_2, rownames(AD_2001887_0.25_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.25)[1] <- 'AD'
+AD_chr4_105236166_0.25<- t(AD_chr4_105236166_0.25) #transpose
+colnames(AD_chr4_105236166_0.25)[1] <- 'AD'
+AD_chr4_105236166_0.25 <- cbind(AD_chr4_105236166_0.25, new_col = vec2)
+colnames(AD_chr4_105236166_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.25)<-c(11:20)
+
+AD_chr4_105236166_0.14 <- subset(AD_2001887_0.14_2, rownames(AD_2001887_0.14_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.14)[1] <- 'AD'
+AD_chr4_105236166_0.14<- t(AD_chr4_105236166_0.14) #transpose
+colnames(AD_chr4_105236166_0.14)[1] <- 'AD'
+AD_chr4_105236166_0.14 <- cbind(AD_chr4_105236166_0.14, new_col = vec3)
+colnames(AD_chr4_105236166_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.14)<-c(21:30)
+
+AD_chr4_105236166_0.11 <- subset(AD_2001887_0.11_2, rownames(AD_2001887_0.11_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.11)[1] <- 'AD'
+AD_chr4_105236166_0.11<- t(AD_chr4_105236166_0.11) #transpose
+colnames(AD_chr4_105236166_0.11)[1] <- 'AD'
+AD_chr4_105236166_0.11 <- cbind(AD_chr4_105236166_0.11, new_col = vec4)
+colnames(AD_chr4_105236166_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.11)<-c(31:40)
+
+
+AD_chr4_105236166_0.07 <- subset(AD_2001887_0.07_2, rownames(AD_2001887_0.07_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.07)[1] <- 'AD'
+AD_chr4_105236166_0.07<- t(AD_chr4_105236166_0.07) #transpose
+colnames(AD_chr4_105236166_0.07)[1] <- 'AD'
+AD_chr4_105236166_0.07 <- cbind(AD_chr4_105236166_0.07, new_col = vec5)
+colnames(AD_chr4_105236166_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.07)<-c(41:50)
+
+AD_chr4_105236166_0.036 <- subset(AD_2001887_0.036_2, rownames(AD_2001887_0.036_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.036)[1] <- 'AD'
+AD_chr4_105236166_0.036<- t(AD_chr4_105236166_0.036) #transpose
+colnames(AD_chr4_105236166_0.036)[1] <- 'AD'
+AD_chr4_105236166_0.036 <- cbind(AD_chr4_105236166_0.036, new_col = vec6)
+colnames(AD_chr4_105236166_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.036)<-c(51:60)
+
+AD_chr4_105236166_0.018 <- subset(AD_2001887_0.018_2, rownames(AD_2001887_0.018_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.018)[1] <- 'AD'
+AD_chr4_105236166_0.018<- t(AD_chr4_105236166_0.018) #transpose
+colnames(AD_chr4_105236166_0.018)[1] <- 'AD'
+AD_chr4_105236166_0.018 <- cbind(AD_chr4_105236166_0.018, new_col = vec7)
+colnames(AD_chr4_105236166_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.018)<-c(61:70)
+
+AD_chr4_105236166_0.014 <- subset(AD_2001887_0.014_2, rownames(AD_2001887_0.014_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.014)[1] <- 'AD'
+AD_chr4_105236166_0.014<- t(AD_chr4_105236166_0.014) #transpose
+colnames(AD_chr4_105236166_0.014)[1] <- 'AD'
+AD_chr4_105236166_0.014 <- cbind(AD_chr4_105236166_0.014, new_col = vec8)
+colnames(AD_chr4_105236166_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.014)<-c(71:80)
+
+AD_chr4_105236166_0.007 <- subset(AD_2001887_0.007_2, rownames(AD_2001887_0.007_2) %in% 'chr4_105236166')
+row.names(AD_chr4_105236166_0.007)[1] <- 'AD'
+AD_chr4_105236166_0.007<- t(AD_chr4_105236166_0.007) #transpose
+colnames(AD_chr4_105236166_0.007)[1] <- 'AD'
+AD_chr4_105236166_0.007 <- cbind(AD_chr4_105236166_0.007, new_col = vec9)
+colnames(AD_chr4_105236166_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr4_105236166_0.007)<-c(81:90)
+
+ALL_AD_chr4_105236166<-rbind(AD_chr4_105236166_0.5,AD_chr4_105236166_0.25,AD_chr4_105236166_0.14,AD_chr4_105236166_0.11,AD_chr4_105236166_0.07,AD_chr4_105236166_0.036,AD_chr4_105236166_0.018,AD_chr4_105236166_0.014,AD_chr4_105236166_0.007)
+rownames(ALL_AD_chr4_105236166)<-(1:90)
+
+ALL_AF_DP_AD_chr4_105236166<-cbind(ALL_AD_chr4_105236166,ALL_DP_chr4_105236166,ALL_AF_chr4_105236166)
+
+ALL_AF_DP_AD_chr4_105236166.df <- as.data.frame(ALL_AF_DP_AD_chr4_105236166)
+ 
+ALL_AF_DP_AD_chr4_105236166.df$Integer<-as.character(ALL_AF_DP_AD_chr4_105236166.df$Integer)
+ 
+ALL_AF_DP_AD_chr4_105236166.df$VAF<-as.numeric(ALL_AF_DP_AD_chr4_105236166.df$VAF)
+ALL_AF_DP_AD_chr4_105236166.df[is.na(ALL_AF_DP_AD_chr4_105236166.df)] <- 0
+ALL_AF_DP_AD_chr4_105236166.df$DP<-as.character(ALL_AF_DP_AD_chr4_105236166.df$DP)
+ALL_AF_DP_AD_chr4_105236166.df$AD<-as.numeric(ALL_AF_DP_AD_chr4_105236166.df$AD)
+
+```{r}
+##chr15_90088702
+```
+
+AD_chr15_90088702_0.5 <- subset(AD_2001887_0.5_2, rownames(AD_2001887_0.5_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.5)[1] <- 'AD'
+AD_chr15_90088702_0.5<- t(AD_chr15_90088702_0.5) #transpose
+colnames(AD_chr15_90088702_0.5)[1] <- 'AD'
+AD_chr15_90088702_0.5 <- cbind(AD_chr15_90088702_0.5, new_col = vec)
+colnames(AD_chr15_90088702_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.5)<-c(1:10)
+
+AD_chr15_90088702_0.25 <- subset(AD_2001887_0.25_2, rownames(AD_2001887_0.25_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.25)[1] <- 'AD'
+AD_chr15_90088702_0.25<- t(AD_chr15_90088702_0.25) #transpose
+colnames(AD_chr15_90088702_0.25)[1] <- 'AD'
+AD_chr15_90088702_0.25 <- cbind(AD_chr15_90088702_0.25, new_col = vec2)
+colnames(AD_chr15_90088702_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.25)<-c(11:20)
+
+AD_chr15_90088702_0.14 <- subset(AD_2001887_0.14_2, rownames(AD_2001887_0.14_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.14)[1] <- 'AD'
+AD_chr15_90088702_0.14<- t(AD_chr15_90088702_0.14) #transpose
+colnames(AD_chr15_90088702_0.14)[1] <- 'AD'
+AD_chr15_90088702_0.14 <- cbind(AD_chr15_90088702_0.14, new_col = vec3)
+colnames(AD_chr15_90088702_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.14)<-c(21:30)
+
+AD_chr15_90088702_0.11 <- subset(AD_2001887_0.11_2, rownames(AD_2001887_0.11_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.11)[1] <- 'AD'
+AD_chr15_90088702_0.11<- t(AD_chr15_90088702_0.11) #transpose
+colnames(AD_chr15_90088702_0.11)[1] <- 'AD'
+AD_chr15_90088702_0.11 <- cbind(AD_chr15_90088702_0.11, new_col = vec4)
+colnames(AD_chr15_90088702_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.11)<-c(31:40)
+
+
+AD_chr15_90088702_0.07 <- subset(AD_2001887_0.07_2, rownames(AD_2001887_0.07_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.07)[1] <- 'AD'
+AD_chr15_90088702_0.07<- t(AD_chr15_90088702_0.07) #transpose
+colnames(AD_chr15_90088702_0.07)[1] <- 'AD'
+AD_chr15_90088702_0.07 <- cbind(AD_chr15_90088702_0.07, new_col = vec5)
+colnames(AD_chr15_90088702_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.07)<-c(41:50)
+
+AD_chr15_90088702_0.036 <- subset(AD_2001887_0.036_2, rownames(AD_2001887_0.036_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.036)[1] <- 'AD'
+AD_chr15_90088702_0.036<- t(AD_chr15_90088702_0.036) #transpose
+colnames(AD_chr15_90088702_0.036)[1] <- 'AD'
+AD_chr15_90088702_0.036 <- cbind(AD_chr15_90088702_0.036, new_col = vec6)
+colnames(AD_chr15_90088702_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.036)<-c(51:60)
+
+AD_chr15_90088702_0.018 <- subset(AD_2001887_0.018_2, rownames(AD_2001887_0.018_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.018)[1] <- 'AD'
+AD_chr15_90088702_0.018<- t(AD_chr15_90088702_0.018) #transpose
+colnames(AD_chr15_90088702_0.018)[1] <- 'AD'
+AD_chr15_90088702_0.018 <- cbind(AD_chr15_90088702_0.018, new_col = vec7)
+colnames(AD_chr15_90088702_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.018)<-c(61:70)
+
+AD_chr15_90088702_0.014 <- subset(AD_2001887_0.014_2, rownames(AD_2001887_0.014_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.014)[1] <- 'AD'
+AD_chr15_90088702_0.014<- t(AD_chr15_90088702_0.014) #transpose
+colnames(AD_chr15_90088702_0.014)[1] <- 'AD'
+AD_chr15_90088702_0.014 <- cbind(AD_chr15_90088702_0.014, new_col = vec8)
+colnames(AD_chr15_90088702_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.014)<-c(71:80)
+
+AD_chr15_90088702_0.007 <- subset(AD_2001887_0.007_2, rownames(AD_2001887_0.007_2) %in% 'chr15_90088702')
+row.names(AD_chr15_90088702_0.007)[1] <- 'AD'
+AD_chr15_90088702_0.007<- t(AD_chr15_90088702_0.007) #transpose
+colnames(AD_chr15_90088702_0.007)[1] <- 'AD'
+AD_chr15_90088702_0.007 <- cbind(AD_chr15_90088702_0.007, new_col = vec9)
+colnames(AD_chr15_90088702_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr15_90088702_0.007)<-c(81:90)
+
+ALL_AD_chr15_90088702<-rbind(AD_chr15_90088702_0.5,AD_chr15_90088702_0.25,AD_chr15_90088702_0.14,AD_chr15_90088702_0.11,AD_chr15_90088702_0.07,AD_chr15_90088702_0.036,AD_chr15_90088702_0.018,AD_chr15_90088702_0.014,AD_chr15_90088702_0.007)
+rownames(ALL_AD_chr15_90088702)<-(1:90)
+
+ALL_AF_DP_AD_chr15_90088702<-cbind(ALL_AD_chr15_90088702,ALL_DP_chr15_90088702,ALL_AF_chr15_90088702)
+
+ALL_AF_DP_AD_chr15_90088702.df <- as.data.frame(ALL_AF_DP_AD_chr15_90088702)
+ 
+ALL_AF_DP_AD_chr15_90088702.df$Integer<-as.character(ALL_AF_DP_AD_chr15_90088702.df$Integer)
+ 
+ALL_AF_DP_AD_chr15_90088702.df$VAF<-as.numeric(ALL_AF_DP_AD_chr15_90088702.df$VAF)
+ALL_AF_DP_AD_chr15_90088702.df[is.na(ALL_AF_DP_AD_chr15_90088702.df)] <- 0
+ALL_AF_DP_AD_chr15_90088702.df$DP<-as.character(ALL_AF_DP_AD_chr15_90088702.df$DP)
+ALL_AF_DP_AD_chr15_90088702.df$AD<-as.numeric(ALL_AF_DP_AD_chr15_90088702.df$AD)
+
+```{r}
+chr19_33301465
+```
+AD_chr19_33301465_0.5 <- subset(AD_2001887_0.5_2, rownames(AD_2001887_0.5_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.5)[1] <- 'AD'
+AD_chr19_33301465_0.5<- t(AD_chr19_33301465_0.5) #transpose
+colnames(AD_chr19_33301465_0.5)[1] <- 'AD'
+AD_chr19_33301465_0.5 <- cbind(AD_chr19_33301465_0.5, new_col = vec)
+colnames(AD_chr19_33301465_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.5)<-c(1:10)
+
+AD_chr19_33301465_0.25 <- subset(AD_2001887_0.25_2, rownames(AD_2001887_0.25_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.25)[1] <- 'AD'
+AD_chr19_33301465_0.25<- t(AD_chr19_33301465_0.25) #transpose
+colnames(AD_chr19_33301465_0.25)[1] <- 'AD'
+AD_chr19_33301465_0.25 <- cbind(AD_chr19_33301465_0.25, new_col = vec2)
+colnames(AD_chr19_33301465_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.25)<-c(11:20)
+
+AD_chr19_33301465_0.14 <- subset(AD_2001887_0.14_2, rownames(AD_2001887_0.14_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.14)[1] <- 'AD'
+AD_chr19_33301465_0.14<- t(AD_chr19_33301465_0.14) #transpose
+colnames(AD_chr19_33301465_0.14)[1] <- 'AD'
+AD_chr19_33301465_0.14 <- cbind(AD_chr19_33301465_0.14, new_col = vec3)
+colnames(AD_chr19_33301465_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.14)<-c(21:30)
+
+AD_chr19_33301465_0.11 <- subset(AD_2001887_0.11_2, rownames(AD_2001887_0.11_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.11)[1] <- 'AD'
+AD_chr19_33301465_0.11<- t(AD_chr19_33301465_0.11) #transpose
+colnames(AD_chr19_33301465_0.11)[1] <- 'AD'
+AD_chr19_33301465_0.11 <- cbind(AD_chr19_33301465_0.11, new_col = vec4)
+colnames(AD_chr19_33301465_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.11)<-c(31:40)
+
+
+AD_chr19_33301465_0.07 <- subset(AD_2001887_0.07_2, rownames(AD_2001887_0.07_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.07)[1] <- 'AD'
+AD_chr19_33301465_0.07<- t(AD_chr19_33301465_0.07) #transpose
+colnames(AD_chr19_33301465_0.07)[1] <- 'AD'
+AD_chr19_33301465_0.07 <- cbind(AD_chr19_33301465_0.07, new_col = vec5)
+colnames(AD_chr19_33301465_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.07)<-c(41:50)
+
+AD_chr19_33301465_0.036 <- subset(AD_2001887_0.036_2, rownames(AD_2001887_0.036_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.036)[1] <- 'AD'
+AD_chr19_33301465_0.036<- t(AD_chr19_33301465_0.036) #transpose
+colnames(AD_chr19_33301465_0.036)[1] <- 'AD'
+AD_chr19_33301465_0.036 <- cbind(AD_chr19_33301465_0.036, new_col = vec6)
+colnames(AD_chr19_33301465_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.036)<-c(51:60)
+
+AD_chr19_33301465_0.018 <- subset(AD_2001887_0.018_2, rownames(AD_2001887_0.018_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.018)[1] <- 'AD'
+AD_chr19_33301465_0.018<- t(AD_chr19_33301465_0.018) #transpose
+colnames(AD_chr19_33301465_0.018)[1] <- 'AD'
+AD_chr19_33301465_0.018 <- cbind(AD_chr19_33301465_0.018, new_col = vec7)
+colnames(AD_chr19_33301465_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.018)<-c(61:70)
+
+AD_chr19_33301465_0.014 <- subset(AD_2001887_0.014_2, rownames(AD_2001887_0.014_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.014)[1] <- 'AD'
+AD_chr19_33301465_0.014<- t(AD_chr19_33301465_0.014) #transpose
+colnames(AD_chr19_33301465_0.014)[1] <- 'AD'
+AD_chr19_33301465_0.014 <- cbind(AD_chr19_33301465_0.014, new_col = vec8)
+colnames(AD_chr19_33301465_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.014)<-c(71:80)
+
+AD_chr19_33301465_0.007 <- subset(AD_2001887_0.007_2, rownames(AD_2001887_0.007_2) %in% 'chr19_33301465')
+row.names(AD_chr19_33301465_0.007)[1] <- 'AD'
+AD_chr19_33301465_0.007<- t(AD_chr19_33301465_0.007) #transpose
+colnames(AD_chr19_33301465_0.007)[1] <- 'AD'
+AD_chr19_33301465_0.007 <- cbind(AD_chr19_33301465_0.007, new_col = vec9)
+colnames(AD_chr19_33301465_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr19_33301465_0.007)<-c(81:90)
+
+ALL_AD_chr19_33301465<-rbind(AD_chr19_33301465_0.5,AD_chr19_33301465_0.25,AD_chr19_33301465_0.14,AD_chr19_33301465_0.11,AD_chr19_33301465_0.07,AD_chr19_33301465_0.036,AD_chr19_33301465_0.018,AD_chr19_33301465_0.014,AD_chr19_33301465_0.007)
+rownames(ALL_AD_chr19_33301465)<-(1:90)
+
+ALL_AF_DP_AD_chr19_33301465<-cbind(ALL_AD_chr19_33301465,ALL_DP_chr19_33301465,ALL_AF_chr19_33301465)
+
+ALL_AF_DP_AD_chr19_33301465.df <- as.data.frame(ALL_AF_DP_AD_chr19_33301465)
+ 
+ALL_AF_DP_AD_chr19_33301465.df$Integer<-as.character(ALL_AF_DP_AD_chr19_33301465.df$Integer)
+ 
+ALL_AF_DP_AD_chr19_33301465.df$VAF<-as.numeric(ALL_AF_DP_AD_chr19_33301465.df$VAF)
+ALL_AF_DP_AD_chr19_33301465.df[is.na(ALL_AF_DP_AD_chr19_33301465.df)] <- 0
+ALL_AF_DP_AD_chr19_33301465.df$DP<-as.character(ALL_AF_DP_AD_chr19_33301465.df$DP)
+ALL_AF_DP_AD_chr19_33301465.df$AD<-as.numeric(ALL_AF_DP_AD_chr19_33301465.df$AD)
+
+```{r}
+##chr19_33302346
+```
+AD_chr19_33302346_0.5 <- subset(AD_2001887_0.5_2, rownames(AD_2001887_0.5_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.5)[1] <- 'AD'
+AD_chr19_33302346_0.5<- t(AD_chr19_33302346_0.5) #transpose
+colnames(AD_chr19_33302346_0.5)[1] <- 'AD'
+AD_chr19_33302346_0.5 <- cbind(AD_chr19_33302346_0.5, new_col = vec)
+colnames(AD_chr19_33302346_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.5)<-c(1:10)
+
+AD_chr19_33302346_0.25 <- subset(AD_2001887_0.25_2, rownames(AD_2001887_0.25_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.25)[1] <- 'AD'
+AD_chr19_33302346_0.25<- t(AD_chr19_33302346_0.25) #transpose
+colnames(AD_chr19_33302346_0.25)[1] <- 'AD'
+AD_chr19_33302346_0.25 <- cbind(AD_chr19_33302346_0.25, new_col = vec2)
+colnames(AD_chr19_33302346_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.25)<-c(11:20)
+
+AD_chr19_33302346_0.14 <- subset(AD_2001887_0.14_2, rownames(AD_2001887_0.14_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.14)[1] <- 'AD'
+AD_chr19_33302346_0.14<- t(AD_chr19_33302346_0.14) #transpose
+colnames(AD_chr19_33302346_0.14)[1] <- 'AD'
+AD_chr19_33302346_0.14 <- cbind(AD_chr19_33302346_0.14, new_col = vec3)
+colnames(AD_chr19_33302346_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.14)<-c(21:30)
+
+AD_chr19_33302346_0.11 <- subset(AD_2001887_0.11_2, rownames(AD_2001887_0.11_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.11)[1] <- 'AD'
+AD_chr19_33302346_0.11<- t(AD_chr19_33302346_0.11) #transpose
+colnames(AD_chr19_33302346_0.11)[1] <- 'AD'
+AD_chr19_33302346_0.11 <- cbind(AD_chr19_33302346_0.11, new_col = vec4)
+colnames(AD_chr19_33302346_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.11)<-c(31:40)
+
+
+AD_chr19_33302346_0.07 <- subset(AD_2001887_0.07_2, rownames(AD_2001887_0.07_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.07)[1] <- 'AD'
+AD_chr19_33302346_0.07<- t(AD_chr19_33302346_0.07) #transpose
+colnames(AD_chr19_33302346_0.07)[1] <- 'AD'
+AD_chr19_33302346_0.07 <- cbind(AD_chr19_33302346_0.07, new_col = vec5)
+colnames(AD_chr19_33302346_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.07)<-c(41:50)
+
+AD_chr19_33302346_0.036 <- subset(AD_2001887_0.036_2, rownames(AD_2001887_0.036_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.036)[1] <- 'AD'
+AD_chr19_33302346_0.036<- t(AD_chr19_33302346_0.036) #transpose
+colnames(AD_chr19_33302346_0.036)[1] <- 'AD'
+AD_chr19_33302346_0.036 <- cbind(AD_chr19_33302346_0.036, new_col = vec6)
+colnames(AD_chr19_33302346_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.036)<-c(51:60)
+
+AD_chr19_33302346_0.018 <- subset(AD_2001887_0.018_2, rownames(AD_2001887_0.018_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.018)[1] <- 'AD'
+AD_chr19_33302346_0.018<- t(AD_chr19_33302346_0.018) #transpose
+colnames(AD_chr19_33302346_0.018)[1] <- 'AD'
+AD_chr19_33302346_0.018 <- cbind(AD_chr19_33302346_0.018, new_col = vec7)
+colnames(AD_chr19_33302346_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.018)<-c(61:70)
+
+AD_chr19_33302346_0.014 <- subset(AD_2001887_0.014_2, rownames(AD_2001887_0.014_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.014)[1] <- 'AD'
+AD_chr19_33302346_0.014<- t(AD_chr19_33302346_0.014) #transpose
+colnames(AD_chr19_33302346_0.014)[1] <- 'AD'
+AD_chr19_33302346_0.014 <- cbind(AD_chr19_33302346_0.014, new_col = vec8)
+colnames(AD_chr19_33302346_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.014)<-c(71:80)
+
+AD_chr19_33302346_0.007 <- subset(AD_2001887_0.007_2, rownames(AD_2001887_0.007_2) %in% 'chr19_33302346')
+row.names(AD_chr19_33302346_0.007)[1] <- 'AD'
+AD_chr19_33302346_0.007<- t(AD_chr19_33302346_0.007) #transpose
+colnames(AD_chr19_33302346_0.007)[1] <- 'AD'
+AD_chr19_33302346_0.007 <- cbind(AD_chr19_33302346_0.007, new_col = vec9)
+colnames(AD_chr19_33302346_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr19_33302346_0.007)<-c(81:90)
+
+ALL_AD_chr19_33302346<-rbind(AD_chr19_33302346_0.5,AD_chr19_33302346_0.25,AD_chr19_33302346_0.14,AD_chr19_33302346_0.11,AD_chr19_33302346_0.07,AD_chr19_33302346_0.036,AD_chr19_33302346_0.018,AD_chr19_33302346_0.014,AD_chr19_33302346_0.007)
+rownames(ALL_AD_chr19_33302346)<-(1:90)
+
+ALL_AF_DP_AD_chr19_33302346<-cbind(ALL_AD_chr19_33302346,ALL_DP_chr19_33302346,ALL_AF_chr19_33302346)
+
+ALL_AF_DP_AD_chr19_33302346.df <- as.data.frame(ALL_AF_DP_AD_chr19_33302346)
+ 
+ALL_AF_DP_AD_chr19_33302346.df$Integer<-as.character(ALL_AF_DP_AD_chr19_33302346.df$Integer)
+ 
+ALL_AF_DP_AD_chr19_33302346.df$VAF<-as.numeric(ALL_AF_DP_AD_chr19_33302346.df$VAF)
+ALL_AF_DP_AD_chr19_33302346.df[is.na(ALL_AF_DP_AD_chr19_33302346.df)] <- 0
+ALL_AF_DP_AD_chr19_33302346.df$DP<-as.character(ALL_AF_DP_AD_chr19_33302346.df$DP)
+ALL_AF_DP_AD_chr19_33302346.df$AD<-as.numeric(ALL_AF_DP_AD_chr19_33302346.df$AD)
+
+```{r}
+##chr17_7673802
+```
+
+AD_chr17_7673802_0.5 <- subset(AD_2003928_0.5_2, rownames(AD_2003928_0.5_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.5)[1] <- 'AD'
+AD_chr17_7673802_0.5<- t(AD_chr17_7673802_0.5) #transpose
+colnames(AD_chr17_7673802_0.5)[1] <- 'AD'
+AD_chr17_7673802_0.5 <- cbind(AD_chr17_7673802_0.5, new_col = vec)
+colnames(AD_chr17_7673802_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.5)<-c(1:10)
+
+AD_chr17_7673802_0.25 <- subset(AD_2003928_0.25_2, rownames(AD_2003928_0.25_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.25)[1] <- 'AD'
+AD_chr17_7673802_0.25<- t(AD_chr17_7673802_0.25) #transpose
+colnames(AD_chr17_7673802_0.25)[1] <- 'AD'
+AD_chr17_7673802_0.25 <- cbind(AD_chr17_7673802_0.25, new_col = vec2)
+colnames(AD_chr17_7673802_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.25)<-c(11:20)
+
+AD_chr17_7673802_0.14 <- subset(AD_2003928_0.14_2, rownames(AD_2003928_0.14_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.14)[1] <- 'AD'
+AD_chr17_7673802_0.14<- t(AD_chr17_7673802_0.14) #transpose
+colnames(AD_chr17_7673802_0.14)[1] <- 'AD'
+AD_chr17_7673802_0.14 <- cbind(AD_chr17_7673802_0.14, new_col = vec3)
+colnames(AD_chr17_7673802_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.14)<-c(21:30)
+
+AD_chr17_7673802_0.11 <- subset(AD_2003928_0.11_2, rownames(AD_2003928_0.11_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.11)[1] <- 'AD'
+AD_chr17_7673802_0.11<- t(AD_chr17_7673802_0.11) #transpose
+colnames(AD_chr17_7673802_0.11)[1] <- 'AD'
+AD_chr17_7673802_0.11 <- cbind(AD_chr17_7673802_0.11, new_col = vec4)
+colnames(AD_chr17_7673802_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.11)<-c(31:40)
+
+
+AD_chr17_7673802_0.07 <- subset(AD_2003928_0.07_2, rownames(AD_2003928_0.07_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.07)[1] <- 'AD'
+AD_chr17_7673802_0.07<- t(AD_chr17_7673802_0.07) #transpose
+colnames(AD_chr17_7673802_0.07)[1] <- 'AD'
+AD_chr17_7673802_0.07 <- cbind(AD_chr17_7673802_0.07, new_col = vec5)
+colnames(AD_chr17_7673802_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.07)<-c(41:50)
+
+AD_chr17_7673802_0.036 <- subset(AD_2003928_0.036_2, rownames(AD_2003928_0.036_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.036)[1] <- 'AD'
+AD_chr17_7673802_0.036<- t(AD_chr17_7673802_0.036) #transpose
+colnames(AD_chr17_7673802_0.036)[1] <- 'AD'
+AD_chr17_7673802_0.036 <- cbind(AD_chr17_7673802_0.036, new_col = vec6)
+colnames(AD_chr17_7673802_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.036)<-c(51:60)
+
+AD_chr17_7673802_0.018 <- subset(AD_2003928_0.018_2, rownames(AD_2003928_0.018_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.018)[1] <- 'AD'
+AD_chr17_7673802_0.018<- t(AD_chr17_7673802_0.018) #transpose
+colnames(AD_chr17_7673802_0.018)[1] <- 'AD'
+AD_chr17_7673802_0.018 <- cbind(AD_chr17_7673802_0.018, new_col = vec7)
+colnames(AD_chr17_7673802_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.018)<-c(61:70)
+
+AD_chr17_7673802_0.014 <- subset(AD_2003928_0.014_2, rownames(AD_2003928_0.014_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.014)[1] <- 'AD'
+AD_chr17_7673802_0.014<- t(AD_chr17_7673802_0.014) #transpose
+colnames(AD_chr17_7673802_0.014)[1] <- 'AD'
+AD_chr17_7673802_0.014 <- cbind(AD_chr17_7673802_0.014, new_col = vec8)
+colnames(AD_chr17_7673802_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.014)<-c(71:80)
+
+AD_chr17_7673802_0.007 <- subset(AD_2003928_0.007_2, rownames(AD_2003928_0.007_2) %in% 'chr17_7673802')
+row.names(AD_chr17_7673802_0.007)[1] <- 'AD'
+AD_chr17_7673802_0.007<- t(AD_chr17_7673802_0.007) #transpose
+colnames(AD_chr17_7673802_0.007)[1] <- 'AD'
+AD_chr17_7673802_0.007 <- cbind(AD_chr17_7673802_0.007, new_col = vec9)
+colnames(AD_chr17_7673802_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr17_7673802_0.007)<-c(81:90)
+
+ALL_AD_chr17_7673802<-rbind(AD_chr17_7673802_0.5,AD_chr17_7673802_0.25,AD_chr17_7673802_0.14,AD_chr17_7673802_0.11,AD_chr17_7673802_0.07,AD_chr17_7673802_0.036,AD_chr17_7673802_0.018,AD_chr17_7673802_0.014,AD_chr17_7673802_0.007)
+rownames(ALL_AD_chr17_7673802)<-(1:90)
+
+ALL_AF_DP_AD_chr17_7673802<-cbind(ALL_AD_chr17_7673802,ALL_DP_chr17_7673802,ALL_AF_chr17_7673802)
+
+ALL_AF_DP_AD_chr17_7673802.df <- as.data.frame(ALL_AF_DP_AD_chr17_7673802)
+ 
+ALL_AF_DP_AD_chr17_7673802.df$Integer<-as.character(ALL_AF_DP_AD_chr17_7673802.df$Integer)
+ 
+ALL_AF_DP_AD_chr17_7673802.df$VAF<-as.numeric(ALL_AF_DP_AD_chr17_7673802.df$VAF)
+ALL_AF_DP_AD_chr17_7673802.df[is.na(ALL_AF_DP_AD_chr17_7673802.df)] <- 0
+ALL_AF_DP_AD_chr17_7673802.df$DP<-as.character(ALL_AF_DP_AD_chr17_7673802.df$DP)
+ALL_AF_DP_AD_chr17_7673802.df$AD<-as.numeric(ALL_AF_DP_AD_chr17_7673802.df$AD)
+
+```{r}
+##chr17_7675232
+```
+AD_chr17_7675232_0.5 <- subset(AD_2003928_0.5_2, rownames(AD_2003928_0.5_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.5)[1] <- 'AD'
+AD_chr17_7675232_0.5<- t(AD_chr17_7675232_0.5) #transpose
+colnames(AD_chr17_7675232_0.5)[1] <- 'AD'
+AD_chr17_7675232_0.5 <- cbind(AD_chr17_7675232_0.5, new_col = vec)
+colnames(AD_chr17_7675232_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.5)<-c(1:10)
+
+AD_chr17_7675232_0.25 <- subset(AD_2003928_0.25_2, rownames(AD_2003928_0.25_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.25)[1] <- 'AD'
+AD_chr17_7675232_0.25<- t(AD_chr17_7675232_0.25) #transpose
+colnames(AD_chr17_7675232_0.25)[1] <- 'AD'
+AD_chr17_7675232_0.25 <- cbind(AD_chr17_7675232_0.25, new_col = vec2)
+colnames(AD_chr17_7675232_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.25)<-c(11:20)
+
+AD_chr17_7675232_0.14 <- subset(AD_2003928_0.14_2, rownames(AD_2003928_0.14_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.14)[1] <- 'AD'
+AD_chr17_7675232_0.14<- t(AD_chr17_7675232_0.14) #transpose
+colnames(AD_chr17_7675232_0.14)[1] <- 'AD'
+AD_chr17_7675232_0.14 <- cbind(AD_chr17_7675232_0.14, new_col = vec3)
+colnames(AD_chr17_7675232_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.14)<-c(21:30)
+
+AD_chr17_7675232_0.11 <- subset(AD_2003928_0.11_2, rownames(AD_2003928_0.11_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.11)[1] <- 'AD'
+AD_chr17_7675232_0.11<- t(AD_chr17_7675232_0.11) #transpose
+colnames(AD_chr17_7675232_0.11)[1] <- 'AD'
+AD_chr17_7675232_0.11 <- cbind(AD_chr17_7675232_0.11, new_col = vec4)
+colnames(AD_chr17_7675232_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.11)<-c(31:40)
+
+
+AD_chr17_7675232_0.07 <- subset(AD_2003928_0.07_2, rownames(AD_2003928_0.07_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.07)[1] <- 'AD'
+AD_chr17_7675232_0.07<- t(AD_chr17_7675232_0.07) #transpose
+colnames(AD_chr17_7675232_0.07)[1] <- 'AD'
+AD_chr17_7675232_0.07 <- cbind(AD_chr17_7675232_0.07, new_col = vec5)
+colnames(AD_chr17_7675232_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.07)<-c(41:50)
+
+AD_chr17_7675232_0.036 <- subset(AD_2003928_0.036_2, rownames(AD_2003928_0.036_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.036)[1] <- 'AD'
+AD_chr17_7675232_0.036<- t(AD_chr17_7675232_0.036) #transpose
+colnames(AD_chr17_7675232_0.036)[1] <- 'AD'
+AD_chr17_7675232_0.036 <- cbind(AD_chr17_7675232_0.036, new_col = vec6)
+colnames(AD_chr17_7675232_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.036)<-c(51:60)
+
+AD_chr17_7675232_0.018 <- subset(AD_2003928_0.018_2, rownames(AD_2003928_0.018_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.018)[1] <- 'AD'
+AD_chr17_7675232_0.018<- t(AD_chr17_7675232_0.018) #transpose
+colnames(AD_chr17_7675232_0.018)[1] <- 'AD'
+AD_chr17_7675232_0.018 <- cbind(AD_chr17_7675232_0.018, new_col = vec7)
+colnames(AD_chr17_7675232_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.018)<-c(61:70)
+
+AD_chr17_7675232_0.014 <- subset(AD_2003928_0.014_2, rownames(AD_2003928_0.014_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.014)[1] <- 'AD'
+AD_chr17_7675232_0.014<- t(AD_chr17_7675232_0.014) #transpose
+colnames(AD_chr17_7675232_0.014)[1] <- 'AD'
+AD_chr17_7675232_0.014 <- cbind(AD_chr17_7675232_0.014, new_col = vec8)
+colnames(AD_chr17_7675232_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.014)<-c(71:80)
+
+AD_chr17_7675232_0.007 <- subset(AD_2003928_0.007_2, rownames(AD_2003928_0.007_2) %in% 'chr17_7675232')
+row.names(AD_chr17_7675232_0.007)[1] <- 'AD'
+AD_chr17_7675232_0.007<- t(AD_chr17_7675232_0.007) #transpose
+colnames(AD_chr17_7675232_0.007)[1] <- 'AD'
+AD_chr17_7675232_0.007 <- cbind(AD_chr17_7675232_0.007, new_col = vec9)
+colnames(AD_chr17_7675232_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr17_7675232_0.007)<-c(81:90)
+
+ALL_AD_chr17_7675232<-rbind(AD_chr17_7675232_0.5,AD_chr17_7675232_0.25,AD_chr17_7675232_0.14,AD_chr17_7675232_0.11,AD_chr17_7675232_0.07,AD_chr17_7675232_0.036,AD_chr17_7675232_0.018,AD_chr17_7675232_0.014,AD_chr17_7675232_0.007)
+rownames(ALL_AD_chr17_7675232)<-(1:90)
+
+ALL_AF_DP_AD_chr17_7675232<-cbind(ALL_AD_chr17_7675232,ALL_DP_chr17_7675232,ALL_AF_chr17_7675232)
+
+ALL_AF_DP_AD_chr17_7675232.df <- as.data.frame(ALL_AF_DP_AD_chr17_7675232)
+ 
+ALL_AF_DP_AD_chr17_7675232.df$Integer<-as.character(ALL_AF_DP_AD_chr17_7675232.df$Integer)
+ 
+ALL_AF_DP_AD_chr17_7675232.df$VAF<-as.numeric(ALL_AF_DP_AD_chr17_7675232.df$VAF)
+ALL_AF_DP_AD_chr17_7675232.df[is.na(ALL_AF_DP_AD_chr17_7675232.df)] <- 0
+ALL_AF_DP_AD_chr17_7675232.df$DP<-as.character(ALL_AF_DP_AD_chr17_7675232.df$DP)
+ALL_AF_DP_AD_chr17_7675232.df$AD<-as.numeric(ALL_AF_DP_AD_chr17_7675232.df$AD)
+
+```{r}
+##chr12_25245328
+```
+AD_chr12_25245328_0.5 <- subset(AD_2003928_0.5_2, rownames(AD_2003928_0.5_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.5)[1] <- 'AD'
+AD_chr12_25245328_0.5<- t(AD_chr12_25245328_0.5) #transpose
+colnames(AD_chr12_25245328_0.5)[1] <- 'AD'
+AD_chr12_25245328_0.5 <- cbind(AD_chr12_25245328_0.5, new_col = vec)
+colnames(AD_chr12_25245328_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.5)<-c(1:10)
+
+AD_chr12_25245328_0.25 <- subset(AD_2003928_0.25_2, rownames(AD_2003928_0.25_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.25)[1] <- 'AD'
+AD_chr12_25245328_0.25<- t(AD_chr12_25245328_0.25) #transpose
+colnames(AD_chr12_25245328_0.25)[1] <- 'AD'
+AD_chr12_25245328_0.25 <- cbind(AD_chr12_25245328_0.25, new_col = vec2)
+colnames(AD_chr12_25245328_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.25)<-c(11:20)
+
+AD_chr12_25245328_0.14 <- subset(AD_2003928_0.14_2, rownames(AD_2003928_0.14_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.14)[1] <- 'AD'
+AD_chr12_25245328_0.14<- t(AD_chr12_25245328_0.14) #transpose
+colnames(AD_chr12_25245328_0.14)[1] <- 'AD'
+AD_chr12_25245328_0.14 <- cbind(AD_chr12_25245328_0.14, new_col = vec3)
+colnames(AD_chr12_25245328_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.14)<-c(21:30)
+
+AD_chr12_25245328_0.11 <- subset(AD_2003928_0.11_2, rownames(AD_2003928_0.11_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.11)[1] <- 'AD'
+AD_chr12_25245328_0.11<- t(AD_chr12_25245328_0.11) #transpose
+colnames(AD_chr12_25245328_0.11)[1] <- 'AD'
+AD_chr12_25245328_0.11 <- cbind(AD_chr12_25245328_0.11, new_col = vec4)
+colnames(AD_chr12_25245328_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.11)<-c(31:40)
+
+
+AD_chr12_25245328_0.07 <- subset(AD_2003928_0.07_2, rownames(AD_2003928_0.07_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.07)[1] <- 'AD'
+AD_chr12_25245328_0.07<- t(AD_chr12_25245328_0.07) #transpose
+colnames(AD_chr12_25245328_0.07)[1] <- 'AD'
+AD_chr12_25245328_0.07 <- cbind(AD_chr12_25245328_0.07, new_col = vec5)
+colnames(AD_chr12_25245328_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.07)<-c(41:50)
+
+AD_chr12_25245328_0.036 <- subset(AD_2003928_0.036_2, rownames(AD_2003928_0.036_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.036)[1] <- 'AD'
+AD_chr12_25245328_0.036<- t(AD_chr12_25245328_0.036) #transpose
+colnames(AD_chr12_25245328_0.036)[1] <- 'AD'
+AD_chr12_25245328_0.036 <- cbind(AD_chr12_25245328_0.036, new_col = vec6)
+colnames(AD_chr12_25245328_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.036)<-c(51:60)
+
+AD_chr12_25245328_0.018 <- subset(AD_2003928_0.018_2, rownames(AD_2003928_0.018_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.018)[1] <- 'AD'
+AD_chr12_25245328_0.018<- t(AD_chr12_25245328_0.018) #transpose
+colnames(AD_chr12_25245328_0.018)[1] <- 'AD'
+AD_chr12_25245328_0.018 <- cbind(AD_chr12_25245328_0.018, new_col = vec7)
+colnames(AD_chr12_25245328_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.018)<-c(61:70)
+
+AD_chr12_25245328_0.014 <- subset(AD_2003928_0.014_2, rownames(AD_2003928_0.014_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.014)[1] <- 'AD'
+AD_chr12_25245328_0.014<- t(AD_chr12_25245328_0.014) #transpose
+colnames(AD_chr12_25245328_0.014)[1] <- 'AD'
+AD_chr12_25245328_0.014 <- cbind(AD_chr12_25245328_0.014, new_col = vec8)
+colnames(AD_chr12_25245328_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.014)<-c(71:80)
+
+AD_chr12_25245328_0.007 <- subset(AD_2003928_0.007_2, rownames(AD_2003928_0.007_2) %in% 'chr12_25245328')
+row.names(AD_chr12_25245328_0.007)[1] <- 'AD'
+AD_chr12_25245328_0.007<- t(AD_chr12_25245328_0.007) #transpose
+colnames(AD_chr12_25245328_0.007)[1] <- 'AD'
+AD_chr12_25245328_0.007 <- cbind(AD_chr12_25245328_0.007, new_col = vec9)
+colnames(AD_chr12_25245328_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245328_0.007)<-c(81:90)
+
+ALL_AD_chr12_25245328<-rbind(AD_chr12_25245328_0.5,AD_chr12_25245328_0.25,AD_chr12_25245328_0.14,AD_chr12_25245328_0.11,AD_chr12_25245328_0.07,AD_chr12_25245328_0.036,AD_chr12_25245328_0.018,AD_chr12_25245328_0.014,AD_chr12_25245328_0.007)
+rownames(ALL_AD_chr12_25245328)<-(1:90)
+
+ALL_AF_DP_AD_chr12_25245328<-cbind(ALL_AD_chr12_25245328,ALL_DP_chr12_25245328,ALL_AF_chr12_25245328)
+
+ALL_AF_DP_AD_chr12_25245328.df <- as.data.frame(ALL_AF_DP_AD_chr12_25245328)
+ 
+ALL_AF_DP_AD_chr12_25245328.df$Integer<-as.character(ALL_AF_DP_AD_chr12_25245328.df$Integer)
+ 
+ALL_AF_DP_AD_chr12_25245328.df$VAF<-as.numeric(ALL_AF_DP_AD_chr12_25245328.df$VAF)
+ALL_AF_DP_AD_chr12_25245328.df[is.na(ALL_AF_DP_AD_chr12_25245328.df)] <- 0
+ALL_AF_DP_AD_chr12_25245328.df$DP<-as.character(ALL_AF_DP_AD_chr12_25245328.df$DP)
+ALL_AF_DP_AD_chr12_25245328.df$AD<-as.numeric(ALL_AF_DP_AD_chr12_25245328.df$AD)
+
+```{r}
+##chr12_25245347
+```
+
+
+AD_chr12_25245347_0.5 <- subset(AD_2003928_0.5_2, rownames(AD_2003928_0.5_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.5)[1] <- 'AD'
+AD_chr12_25245347_0.5<- t(AD_chr12_25245347_0.5) #transpose
+colnames(AD_chr12_25245347_0.5)[1] <- 'AD'
+AD_chr12_25245347_0.5 <- cbind(AD_chr12_25245347_0.5, new_col = vec)
+colnames(AD_chr12_25245347_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.5)<-c(1:10)
+
+AD_chr12_25245347_0.25 <- subset(AD_2003928_0.25_2, rownames(AD_2003928_0.25_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.25)[1] <- 'AD'
+AD_chr12_25245347_0.25<- t(AD_chr12_25245347_0.25) #transpose
+colnames(AD_chr12_25245347_0.25)[1] <- 'AD'
+AD_chr12_25245347_0.25 <- cbind(AD_chr12_25245347_0.25, new_col = vec2)
+colnames(AD_chr12_25245347_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.25)<-c(11:20)
+
+AD_chr12_25245347_0.14 <- subset(AD_2003928_0.14_2, rownames(AD_2003928_0.14_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.14)[1] <- 'AD'
+AD_chr12_25245347_0.14<- t(AD_chr12_25245347_0.14) #transpose
+colnames(AD_chr12_25245347_0.14)[1] <- 'AD'
+AD_chr12_25245347_0.14 <- cbind(AD_chr12_25245347_0.14, new_col = vec3)
+colnames(AD_chr12_25245347_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.14)<-c(21:30)
+
+AD_chr12_25245347_0.11 <- subset(AD_2003928_0.11_2, rownames(AD_2003928_0.11_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.11)[1] <- 'AD'
+AD_chr12_25245347_0.11<- t(AD_chr12_25245347_0.11) #transpose
+colnames(AD_chr12_25245347_0.11)[1] <- 'AD'
+AD_chr12_25245347_0.11 <- cbind(AD_chr12_25245347_0.11, new_col = vec4)
+colnames(AD_chr12_25245347_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.11)<-c(31:40)
+
+
+AD_chr12_25245347_0.07 <- subset(AD_2003928_0.07_2, rownames(AD_2003928_0.07_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.07)[1] <- 'AD'
+AD_chr12_25245347_0.07<- t(AD_chr12_25245347_0.07) #transpose
+colnames(AD_chr12_25245347_0.07)[1] <- 'AD'
+AD_chr12_25245347_0.07 <- cbind(AD_chr12_25245347_0.07, new_col = vec5)
+colnames(AD_chr12_25245347_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.07)<-c(41:50)
+
+AD_chr12_25245347_0.036 <- subset(AD_2003928_0.036_2, rownames(AD_2003928_0.036_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.036)[1] <- 'AD'
+AD_chr12_25245347_0.036<- t(AD_chr12_25245347_0.036) #transpose
+colnames(AD_chr12_25245347_0.036)[1] <- 'AD'
+AD_chr12_25245347_0.036 <- cbind(AD_chr12_25245347_0.036, new_col = vec6)
+colnames(AD_chr12_25245347_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.036)<-c(51:60)
+
+AD_chr12_25245347_0.018 <- subset(AD_2003928_0.018_2, rownames(AD_2003928_0.018_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.018)[1] <- 'AD'
+AD_chr12_25245347_0.018<- t(AD_chr12_25245347_0.018) #transpose
+colnames(AD_chr12_25245347_0.018)[1] <- 'AD'
+AD_chr12_25245347_0.018 <- cbind(AD_chr12_25245347_0.018, new_col = vec7)
+colnames(AD_chr12_25245347_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.018)<-c(61:70)
+
+AD_chr12_25245347_0.014 <- subset(AD_2003928_0.014_2, rownames(AD_2003928_0.014_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.014)[1] <- 'AD'
+AD_chr12_25245347_0.014<- t(AD_chr12_25245347_0.014) #transpose
+colnames(AD_chr12_25245347_0.014)[1] <- 'AD'
+AD_chr12_25245347_0.014 <- cbind(AD_chr12_25245347_0.014, new_col = vec8)
+colnames(AD_chr12_25245347_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.014)<-c(71:80)
+
+AD_chr12_25245347_0.007 <- subset(AD_2003928_0.007_2, rownames(AD_2003928_0.007_2) %in% 'chr12_25245347')
+row.names(AD_chr12_25245347_0.007)[1] <- 'AD'
+AD_chr12_25245347_0.007<- t(AD_chr12_25245347_0.007) #transpose
+colnames(AD_chr12_25245347_0.007)[1] <- 'AD'
+AD_chr12_25245347_0.007 <- cbind(AD_chr12_25245347_0.007, new_col = vec9)
+colnames(AD_chr12_25245347_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr12_25245347_0.007)<-c(81:90)
+
+ALL_AD_chr12_25245347<-rbind(AD_chr12_25245347_0.5,AD_chr12_25245347_0.25,AD_chr12_25245347_0.14,AD_chr12_25245347_0.11,AD_chr12_25245347_0.07,AD_chr12_25245347_0.036,AD_chr12_25245347_0.018,AD_chr12_25245347_0.014,AD_chr12_25245347_0.007)
+rownames(ALL_AD_chr12_25245347)<-(1:90)
+
+ALL_AF_DP_AD_chr12_25245347<-cbind(ALL_AD_chr12_25245347,ALL_DP_chr12_25245347,ALL_AF_chr12_25245347)
+
+ALL_AF_DP_AD_chr12_25245347.df <- as.data.frame(ALL_AF_DP_AD_chr12_25245347)
+ 
+ALL_AF_DP_AD_chr12_25245347.df$Integer<-as.character(ALL_AF_DP_AD_chr12_25245347.df$Integer)
+ 
+ALL_AF_DP_AD_chr12_25245347.df$VAF<-as.numeric(ALL_AF_DP_AD_chr12_25245347.df$VAF)
+ALL_AF_DP_AD_chr12_25245347.df[is.na(ALL_AF_DP_AD_chr12_25245347.df)] <- 0
+ALL_AF_DP_AD_chr12_25245347.df$DP<-as.character(ALL_AF_DP_AD_chr12_25245347.df$DP)
+ALL_AF_DP_AD_chr12_25245347.df$AD<-as.numeric(ALL_AF_DP_AD_chr12_25245347.df$AD)
+
+```{r}
+##chr5_171410539
+```
+
+AD_chr5_171410539_0.5 <- subset(AD_2004169_0.5_2, rownames(AD_2004169_0.5_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.5)[1] <- 'AD'
+AD_chr5_171410539_0.5<- t(AD_chr5_171410539_0.5) #transpose
+colnames(AD_chr5_171410539_0.5)[1] <- 'AD'
+AD_chr5_171410539_0.5 <- cbind(AD_chr5_171410539_0.5, new_col = vec)
+colnames(AD_chr5_171410539_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.5)<-c(1:10)
+
+AD_chr5_171410539_0.25 <- subset(AD_2004169_0.25_2, rownames(AD_2004169_0.25_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.25)[1] <- 'AD'
+AD_chr5_171410539_0.25<- t(AD_chr5_171410539_0.25) #transpose
+colnames(AD_chr5_171410539_0.25)[1] <- 'AD'
+AD_chr5_171410539_0.25 <- cbind(AD_chr5_171410539_0.25, new_col = vec2)
+colnames(AD_chr5_171410539_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.25)<-c(11:20)
+
+AD_chr5_171410539_0.14 <- subset(AD_2004169_0.14_2, rownames(AD_2004169_0.14_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.14)[1] <- 'AD'
+AD_chr5_171410539_0.14<- t(AD_chr5_171410539_0.14) #transpose
+colnames(AD_chr5_171410539_0.14)[1] <- 'AD'
+AD_chr5_171410539_0.14 <- cbind(AD_chr5_171410539_0.14, new_col = vec3)
+colnames(AD_chr5_171410539_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.14)<-c(21:30)
+
+AD_chr5_171410539_0.11 <- subset(AD_2004169_0.11_2, rownames(AD_2004169_0.11_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.11)[1] <- 'AD'
+AD_chr5_171410539_0.11<- t(AD_chr5_171410539_0.11) #transpose
+colnames(AD_chr5_171410539_0.11)[1] <- 'AD'
+AD_chr5_171410539_0.11 <- cbind(AD_chr5_171410539_0.11, new_col = vec4)
+colnames(AD_chr5_171410539_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.11)<-c(31:40)
+
+
+AD_chr5_171410539_0.07 <- subset(AD_2004169_0.07_2, rownames(AD_2004169_0.07_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.07)[1] <- 'AD'
+AD_chr5_171410539_0.07<- t(AD_chr5_171410539_0.07) #transpose
+colnames(AD_chr5_171410539_0.07)[1] <- 'AD'
+AD_chr5_171410539_0.07 <- cbind(AD_chr5_171410539_0.07, new_col = vec5)
+colnames(AD_chr5_171410539_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.07)<-c(41:50)
+
+AD_chr5_171410539_0.036 <- subset(AD_2004169_0.036_2, rownames(AD_2004169_0.036_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.036)[1] <- 'AD'
+AD_chr5_171410539_0.036<- t(AD_chr5_171410539_0.036) #transpose
+colnames(AD_chr5_171410539_0.036)[1] <- 'AD'
+AD_chr5_171410539_0.036 <- cbind(AD_chr5_171410539_0.036, new_col = vec6)
+colnames(AD_chr5_171410539_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.036)<-c(51:60)
+
+AD_chr5_171410539_0.018 <- subset(AD_2004169_0.018_2, rownames(AD_2004169_0.018_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.018)[1] <- 'AD'
+AD_chr5_171410539_0.018<- t(AD_chr5_171410539_0.018) #transpose
+colnames(AD_chr5_171410539_0.018)[1] <- 'AD'
+AD_chr5_171410539_0.018 <- cbind(AD_chr5_171410539_0.018, new_col = vec7)
+colnames(AD_chr5_171410539_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.018)<-c(61:70)
+
+AD_chr5_171410539_0.014 <- subset(AD_2004169_0.014_2, rownames(AD_2004169_0.014_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.014)[1] <- 'AD'
+AD_chr5_171410539_0.014<- t(AD_chr5_171410539_0.014) #transpose
+colnames(AD_chr5_171410539_0.014)[1] <- 'AD'
+AD_chr5_171410539_0.014 <- cbind(AD_chr5_171410539_0.014, new_col = vec8)
+colnames(AD_chr5_171410539_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.014)<-c(71:80)
+
+AD_chr5_171410539_0.007 <- subset(AD_2004169_0.007_2, rownames(AD_2004169_0.007_2) %in% 'chr5_171410539')
+row.names(AD_chr5_171410539_0.007)[1] <- 'AD'
+AD_chr5_171410539_0.007<- t(AD_chr5_171410539_0.007) #transpose
+colnames(AD_chr5_171410539_0.007)[1] <- 'AD'
+AD_chr5_171410539_0.007 <- cbind(AD_chr5_171410539_0.007, new_col = vec9)
+colnames(AD_chr5_171410539_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr5_171410539_0.007)<-c(81:90)
+
+ALL_AD_chr5_171410539<-rbind(AD_chr5_171410539_0.5,AD_chr5_171410539_0.25,AD_chr5_171410539_0.14,AD_chr5_171410539_0.11,AD_chr5_171410539_0.07,AD_chr5_171410539_0.036,AD_chr5_171410539_0.018,AD_chr5_171410539_0.014,AD_chr5_171410539_0.007)
+rownames(ALL_AD_chr5_171410539)<-(1:90)
+
+ALL_AF_DP_AD_chr5_171410539<-cbind(ALL_AD_chr5_171410539,ALL_DP_chr5_171410539,ALL_AF_chr5_171410539)
+
+ALL_AF_DP_AD_chr5_171410539.df <- as.data.frame(ALL_AF_DP_AD_chr5_171410539)
+ 
+ALL_AF_DP_AD_chr5_171410539.df$Integer<-as.character(ALL_AF_DP_AD_chr5_171410539.df$Integer)
+ 
+ALL_AF_DP_AD_chr5_171410539.df$VAF<-as.numeric(ALL_AF_DP_AD_chr5_171410539.df$VAF)
+ALL_AF_DP_AD_chr5_171410539.df[is.na(ALL_AF_DP_AD_chr5_171410539.df)] <- 0
+ALL_AF_DP_AD_chr5_171410539.df$DP<-as.character(ALL_AF_DP_AD_chr5_171410539.df$DP)
+ALL_AF_DP_AD_chr5_171410539.df$AD<-as.numeric(ALL_AF_DP_AD_chr5_171410539.df$AD)
+
+```{r}
+##chr12_112450359
+```
+AD_chr12_112450359_0.5 <- subset(AD_2004169_0.5_2, rownames(AD_2004169_0.5_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.5)[1] <- 'AD'
+AD_chr12_112450359_0.5<- t(AD_chr12_112450359_0.5) #transpose
+colnames(AD_chr12_112450359_0.5)[1] <- 'AD'
+AD_chr12_112450359_0.5 <- cbind(AD_chr12_112450359_0.5, new_col = vec)
+colnames(AD_chr12_112450359_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.5)<-c(1:10)
+
+AD_chr12_112450359_0.25 <- subset(AD_2004169_0.25_2, rownames(AD_2004169_0.25_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.25)[1] <- 'AD'
+AD_chr12_112450359_0.25<- t(AD_chr12_112450359_0.25) #transpose
+colnames(AD_chr12_112450359_0.25)[1] <- 'AD'
+AD_chr12_112450359_0.25 <- cbind(AD_chr12_112450359_0.25, new_col = vec2)
+colnames(AD_chr12_112450359_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.25)<-c(11:20)
+
+AD_chr12_112450359_0.14 <- subset(AD_2004169_0.14_2, rownames(AD_2004169_0.14_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.14)[1] <- 'AD'
+AD_chr12_112450359_0.14<- t(AD_chr12_112450359_0.14) #transpose
+colnames(AD_chr12_112450359_0.14)[1] <- 'AD'
+AD_chr12_112450359_0.14 <- cbind(AD_chr12_112450359_0.14, new_col = vec3)
+colnames(AD_chr12_112450359_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.14)<-c(21:30)
+
+AD_chr12_112450359_0.11 <- subset(AD_2004169_0.11_2, rownames(AD_2004169_0.11_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.11)[1] <- 'AD'
+AD_chr12_112450359_0.11<- t(AD_chr12_112450359_0.11) #transpose
+colnames(AD_chr12_112450359_0.11)[1] <- 'AD'
+AD_chr12_112450359_0.11 <- cbind(AD_chr12_112450359_0.11, new_col = vec4)
+colnames(AD_chr12_112450359_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.11)<-c(31:40)
+
+
+AD_chr12_112450359_0.07 <- subset(AD_2004169_0.07_2, rownames(AD_2004169_0.07_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.07)[1] <- 'AD'
+AD_chr12_112450359_0.07<- t(AD_chr12_112450359_0.07) #transpose
+colnames(AD_chr12_112450359_0.07)[1] <- 'AD'
+AD_chr12_112450359_0.07 <- cbind(AD_chr12_112450359_0.07, new_col = vec5)
+colnames(AD_chr12_112450359_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.07)<-c(41:50)
+
+AD_chr12_112450359_0.036 <- subset(AD_2004169_0.036_2, rownames(AD_2004169_0.036_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.036)[1] <- 'AD'
+AD_chr12_112450359_0.036<- t(AD_chr12_112450359_0.036) #transpose
+colnames(AD_chr12_112450359_0.036)[1] <- 'AD'
+AD_chr12_112450359_0.036 <- cbind(AD_chr12_112450359_0.036, new_col = vec6)
+colnames(AD_chr12_112450359_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.036)<-c(51:60)
+
+AD_chr12_112450359_0.018 <- subset(AD_2004169_0.018_2, rownames(AD_2004169_0.018_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.018)[1] <- 'AD'
+AD_chr12_112450359_0.018<- t(AD_chr12_112450359_0.018) #transpose
+colnames(AD_chr12_112450359_0.018)[1] <- 'AD'
+AD_chr12_112450359_0.018 <- cbind(AD_chr12_112450359_0.018, new_col = vec7)
+colnames(AD_chr12_112450359_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.018)<-c(61:70)
+
+AD_chr12_112450359_0.014 <- subset(AD_2004169_0.014_2, rownames(AD_2004169_0.014_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.014)[1] <- 'AD'
+AD_chr12_112450359_0.014<- t(AD_chr12_112450359_0.014) #transpose
+colnames(AD_chr12_112450359_0.014)[1] <- 'AD'
+AD_chr12_112450359_0.014 <- cbind(AD_chr12_112450359_0.014, new_col = vec8)
+colnames(AD_chr12_112450359_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.014)<-c(71:80)
+
+AD_chr12_112450359_0.007 <- subset(AD_2004169_0.007_2, rownames(AD_2004169_0.007_2) %in% 'chr12_112450359')
+row.names(AD_chr12_112450359_0.007)[1] <- 'AD'
+AD_chr12_112450359_0.007<- t(AD_chr12_112450359_0.007) #transpose
+colnames(AD_chr12_112450359_0.007)[1] <- 'AD'
+AD_chr12_112450359_0.007 <- cbind(AD_chr12_112450359_0.007, new_col = vec9)
+colnames(AD_chr12_112450359_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr12_112450359_0.007)<-c(81:90)
+
+ALL_AD_chr12_112450359<-rbind(AD_chr12_112450359_0.5,AD_chr12_112450359_0.25,AD_chr12_112450359_0.14,AD_chr12_112450359_0.11,AD_chr12_112450359_0.07,AD_chr12_112450359_0.036,AD_chr12_112450359_0.018,AD_chr12_112450359_0.014,AD_chr12_112450359_0.007)
+rownames(ALL_AD_chr12_112450359)<-(1:90)
+
+ALL_AF_DP_AD_chr12_112450359<-cbind(ALL_AD_chr12_112450359,ALL_DP_chr12_112450359,ALL_AF_chr12_112450359)
+
+ALL_AF_DP_AD_chr12_112450359.df <- as.data.frame(ALL_AF_DP_AD_chr12_112450359)
+ 
+ALL_AF_DP_AD_chr12_112450359.df$Integer<-as.character(ALL_AF_DP_AD_chr12_112450359.df$Integer)
+ 
+ALL_AF_DP_AD_chr12_112450359.df$VAF<-as.numeric(ALL_AF_DP_AD_chr12_112450359.df$VAF)
+ALL_AF_DP_AD_chr12_112450359.df[is.na(ALL_AF_DP_AD_chr12_112450359.df)] <- 0
+ALL_AF_DP_AD_chr12_112450359.df$DP<-as.character(ALL_AF_DP_AD_chr12_112450359.df$DP)
+ALL_AF_DP_AD_chr12_112450359.df$AD<-as.numeric(ALL_AF_DP_AD_chr12_112450359.df$AD)
+
+```{r}
+##chr13_28018505
+```
+
+AD_chr13_28018505_0.5 <- subset(AD_2004169_0.5_2, rownames(AD_2004169_0.5_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.5)[1] <- 'AD'
+AD_chr13_28018505_0.5<- t(AD_chr13_28018505_0.5) #transpose
+colnames(AD_chr13_28018505_0.5)[1] <- 'AD'
+AD_chr13_28018505_0.5 <- cbind(AD_chr13_28018505_0.5, new_col = vec)
+colnames(AD_chr13_28018505_0.5)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.5)<-c(1:10)
+
+AD_chr13_28018505_0.25 <- subset(AD_2004169_0.25_2, rownames(AD_2004169_0.25_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.25)[1] <- 'AD'
+AD_chr13_28018505_0.25<- t(AD_chr13_28018505_0.25) #transpose
+colnames(AD_chr13_28018505_0.25)[1] <- 'AD'
+AD_chr13_28018505_0.25 <- cbind(AD_chr13_28018505_0.25, new_col = vec2)
+colnames(AD_chr13_28018505_0.25)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.25)<-c(11:20)
+
+AD_chr13_28018505_0.14 <- subset(AD_2004169_0.14_2, rownames(AD_2004169_0.14_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.14)[1] <- 'AD'
+AD_chr13_28018505_0.14<- t(AD_chr13_28018505_0.14) #transpose
+colnames(AD_chr13_28018505_0.14)[1] <- 'AD'
+AD_chr13_28018505_0.14 <- cbind(AD_chr13_28018505_0.14, new_col = vec3)
+colnames(AD_chr13_28018505_0.14)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.14)<-c(21:30)
+
+AD_chr13_28018505_0.11 <- subset(AD_2004169_0.11_2, rownames(AD_2004169_0.11_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.11)[1] <- 'AD'
+AD_chr13_28018505_0.11<- t(AD_chr13_28018505_0.11) #transpose
+colnames(AD_chr13_28018505_0.11)[1] <- 'AD'
+AD_chr13_28018505_0.11 <- cbind(AD_chr13_28018505_0.11, new_col = vec4)
+colnames(AD_chr13_28018505_0.11)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.11)<-c(31:40)
+
+
+AD_chr13_28018505_0.07 <- subset(AD_2004169_0.07_2, rownames(AD_2004169_0.07_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.07)[1] <- 'AD'
+AD_chr13_28018505_0.07<- t(AD_chr13_28018505_0.07) #transpose
+colnames(AD_chr13_28018505_0.07)[1] <- 'AD'
+AD_chr13_28018505_0.07 <- cbind(AD_chr13_28018505_0.07, new_col = vec5)
+colnames(AD_chr13_28018505_0.07)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.07)<-c(41:50)
+
+AD_chr13_28018505_0.036 <- subset(AD_2004169_0.036_2, rownames(AD_2004169_0.036_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.036)[1] <- 'AD'
+AD_chr13_28018505_0.036<- t(AD_chr13_28018505_0.036) #transpose
+colnames(AD_chr13_28018505_0.036)[1] <- 'AD'
+AD_chr13_28018505_0.036 <- cbind(AD_chr13_28018505_0.036, new_col = vec6)
+colnames(AD_chr13_28018505_0.036)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.036)<-c(51:60)
+
+AD_chr13_28018505_0.018 <- subset(AD_2004169_0.018_2, rownames(AD_2004169_0.018_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.018)[1] <- 'AD'
+AD_chr13_28018505_0.018<- t(AD_chr13_28018505_0.018) #transpose
+colnames(AD_chr13_28018505_0.018)[1] <- 'AD'
+AD_chr13_28018505_0.018 <- cbind(AD_chr13_28018505_0.018, new_col = vec7)
+colnames(AD_chr13_28018505_0.018)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.018)<-c(61:70)
+
+AD_chr13_28018505_0.014 <- subset(AD_2004169_0.014_2, rownames(AD_2004169_0.014_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.014)[1] <- 'AD'
+AD_chr13_28018505_0.014<- t(AD_chr13_28018505_0.014) #transpose
+colnames(AD_chr13_28018505_0.014)[1] <- 'AD'
+AD_chr13_28018505_0.014 <- cbind(AD_chr13_28018505_0.014, new_col = vec8)
+colnames(AD_chr13_28018505_0.014)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.014)<-c(71:80)
+
+AD_chr13_28018505_0.007 <- subset(AD_2004169_0.007_2, rownames(AD_2004169_0.007_2) %in% 'chr13_28018505')
+row.names(AD_chr13_28018505_0.007)[1] <- 'AD'
+AD_chr13_28018505_0.007<- t(AD_chr13_28018505_0.007) #transpose
+colnames(AD_chr13_28018505_0.007)[1] <- 'AD'
+AD_chr13_28018505_0.007 <- cbind(AD_chr13_28018505_0.007, new_col = vec9)
+colnames(AD_chr13_28018505_0.007)[2] <- 'Integer_AD'
+rownames(AD_chr13_28018505_0.007)<-c(81:90)
+
+ALL_AD_chr13_28018505<-rbind(AD_chr13_28018505_0.5,AD_chr13_28018505_0.25,AD_chr13_28018505_0.14,AD_chr13_28018505_0.11,AD_chr13_28018505_0.07,AD_chr13_28018505_0.036,AD_chr13_28018505_0.018,AD_chr13_28018505_0.014,AD_chr13_28018505_0.007)
+rownames(ALL_AD_chr13_28018505)<-(1:90)
+
+ALL_AF_DP_AD_chr13_28018505<-cbind(ALL_AD_chr13_28018505,ALL_DP_chr13_28018505,ALL_AF_chr13_28018505)
+
+ALL_AF_DP_AD_chr13_28018505.df <- as.data.frame(ALL_AF_DP_AD_chr13_28018505)
+ 
+ALL_AF_DP_AD_chr13_28018505.df$Integer<-as.character(ALL_AF_DP_AD_chr13_28018505.df$Integer)
+ 
+ALL_AF_DP_AD_chr13_28018505.df$VAF<-as.numeric(ALL_AF_DP_AD_chr13_28018505.df$VAF)
+ALL_AF_DP_AD_chr13_28018505.df[is.na(ALL_AF_DP_AD_chr13_28018505.df)] <- 0
+ALL_AF_DP_AD_chr13_28018505.df$DP<-as.character(ALL_AF_DP_AD_chr13_28018505.df$DP)
+ALL_AF_DP_AD_chr13_28018505.df$AD<-as.numeric(ALL_AF_DP_AD_chr13_28018505.df$AD)

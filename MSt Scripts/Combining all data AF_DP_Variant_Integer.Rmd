@@ -1,0 +1,78 @@
+---
+title: "All_Data"
+author: "Alex Couzens"
+date: "15/07/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+dat <- as.data.frame(matrix("TET2 c.941del", nrow =90))
+TET2_c_941del_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr4_105234882,dat)
+
+dat2 <- as.data.frame(matrix("TET2 c.3640C>T", nrow =90))
+TET2_c_3640C_T_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr4_105243615,dat2)
+
+dat3 <- as.data.frame(matrix("TET2 c.5456T>A", nrow =90))
+TET2_c_5456T_A_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr4_105275966,dat3)
+
+dat4 <- as.data.frame(matrix("CBL c.1126T>C", nrow =90))
+CBL_c_1126T_C_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr11_119278196,dat4)
+
+dat5 <- as.data.frame(matrix("PTPN11 c.1508G>A", nrow =90))
+PTPN11_c_1508G_A_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr12_112489084,dat5)
+
+dat6 <- as.data.frame(matrix("SRSF2 c.284C>A", nrow =90))
+SRSF2_c_284C_A_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr17_76736877,dat6)
+
+dat7 <- as.data.frame(matrix("RUNX1 c.610C>T", nrow =90))
+RUNX1_c_610C_T_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr21_34859477,dat7)
+
+dat8 <- as.data.frame(matrix("GATA2 c.961C>T", nrow =90))
+GATA2_c_961C_T_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr3_128483916,dat8)
+
+dat9 <- as.data.frame(matrix("TET2 c.2224C>T", nrow =90))
+TET2_c_2224C_T_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr4_105236166,dat9)
+
+dat10 <- as.data.frame(matrix("IDH2 c.419G>A", nrow =90))
+IDH2_c_419G_A_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr15_90088702,dat10)
+
+dat11 <- as.data.frame(matrix("CEBPA c.917_949dup", nrow =90))
+CEBPA_c_917_949dup_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr19_33301465,dat11)
+
+dat12 <- as.data.frame(matrix("CEBPA c.68dup", nrow =90))
+CEBPA_c_68dup_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr19_33302346,dat12)
+
+dat13 <- as.data.frame(matrix("TP53 c.818G>A", nrow =90))
+TP53_c_818G_A_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr17_7673802,dat13)
+
+dat14 <- as.data.frame(matrix("TP53 c.380C>T", nrow =90))
+TP53_c_380C_T_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr17_7675232,dat14)
+
+dat15 <- as.data.frame(matrix("KRAS c.57G>C", nrow =90))
+KRAS_c_57G_C_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr12_25245328,dat15)
+
+dat16 <- as.data.frame(matrix("KRAS 38G>A", nrow =90))
+KRAS_c_38G_A_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr12_25245347,dat16)
+
+dat17 <- as.data.frame(matrix("NPM1 c.860_863dup", nrow =90))
+NPM1_c_860_863dup_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr5_171410539,dat17)
+
+dat18 <- as.data.frame(matrix("PTPN11 c.179G>T", nrow =90))
+PTPN11_c_179G_T_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr12_112450359,dat18)
+
+dat19 <- as.data.frame(matrix("FLT3 c.2503G>T", nrow =90))
+FLT3_c_2503G_T_AF_DP_AD <- cbind(ALL_AF_DP_AD_chr13_28018505,dat19)
+
+
+df <-rbind(TET2_c_941del_AF_DP_AD,TET2_c_3640C_T_AF_DP_AD,TET2_c_5456T_A_AF_DP_AD,CBL_c_1126T_C_AF_DP_AD,PTPN11_c_1508G_A_AF_DP_AD,SRSF2_c_284C_A_AF_DP_AD,RUNX1_c_610C_T_AF_DP_AD,GATA2_c_961C_T_AF_DP_AD,TET2_c_2224C_T_AF_DP_AD,IDH2_c_419G_A_AF_DP_AD,CEBPA_c_917_949dup_AF_DP_AD,CEBPA_c_68dup_AF_DP_AD,TP53_c_818G_A_AF_DP_AD,TP53_c_380C_T_AF_DP_AD,KRAS_c_57G_C_AF_DP_AD,KRAS_c_38G_A_AF_DP_AD,NPM1_c_860_863dup_AF_DP_AD,PTPN11_c_179G_T_AF_DP_AD,FLT3_c_2503G_T_AF_DP_AD)
+
+
+
+
+
+
+
+

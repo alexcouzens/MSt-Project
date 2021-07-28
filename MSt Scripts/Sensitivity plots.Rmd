@@ -1,0 +1,33 @@
+---
+title: "Sensitivity plot"
+author: "Alex Couzens"
+date: "23/07/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Import 5% variant data
+library(readxl)
+Sensitivity5 <- read_excel("All_dat_new.xlsx", 
+    sheet = "Sensitivity (5%)")
+View(Sensitivity5)
+
+## Import all variant data
+library(readxl)
+Sensitivity <- read_excel("All_dat_new.xlsx", 
+    sheet = "Sensitivity")
+View(Sensitivity)
+
+
+
+##arrange order of variants lowest VAF -> highest VAF
+Sensitivity$`Variant` <- factor(Sensitivity$`Variant`, levels = c("1.7% - KRAS 38G>A","3.3% - IDH2 c.419G>A", "3.9% - PTPN11 c.1508G>A", "4.3% - TP53 c.380C>T", "4.5% - FLT3 c.2503G>T", "4.7% - RUNX1 c.610C>T", "5.5% - TET2 c.2224C>T", "5.8% - PTPN11 c.179G>T", "6% - CBL c.1126T>C", "6.5% - TP53 c.818G>A", "8.3% - GATA2 c.961C>T", "16.2% - KRAS c.57G>C", "18% - TET2 c.941del", "29.5% - TET2 c.5456T>A", "42.7% - CEBPA c.68dup", "43.4% - CEBPA c.917_949dup", "46.4% - SRSF2 c.284C>A", "46.8% - TET2 c.3640C>T", "50.1% - NPM1 c.860_863dup"))
+
+##plot for all variants 
+Splot<- ggplot(Sensitivity, aes(x=DP, y=Sensitivity, group=Variant, color=Variant))+geom_line() + geom_point()+scale_x_reverse(limit=c(6000, 0),breaks = seq(6000, 0, by = -200))+scale_y_continuous(limit=c(0,100),breaks = seq(0, 100, by = 10))+theme_classic()+ geom_hline(yintercept=90, linetype="dashed", color = "red")+ theme(axis.text.x = element_text(angle=25),)+theme(axis.title.x = element_text(vjust=-0.5),axis.text.x = element_text(angle=45, vjust=0.1))+ylab("Sensitivity (%)")+xlab("Read Depth at Position")+labs(color='Variant and VAF%')+scale_color_manual(values=c("#a4a5a4","#b855c4", "#afb538", "#d83681", "#d49637", "#658cce", "#c6512a", "#47bcd2", "#d14558", "#5ac296", "#e2d0e2", "#047a02", "#7c599f", "#45c900", "#230023", "#378457", "#a7546c", "#886d2d", "#da896b"))
+Splot
+
+

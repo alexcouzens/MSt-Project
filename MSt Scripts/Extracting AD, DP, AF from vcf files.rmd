@@ -1,0 +1,1194 @@
+---
+title: "Extracting AD, DP, AF from vcf files"
+author: "Alex Couzens"
+date: "10/07/2021"
+output: html_document
+---
+
+# Load necessary libraries
+```{r setup, include=FALSE}
+library(tidyr)
+library(plyr)
+library(dplyr)
+library(readr)
+library(vcfR)
+library(scales)
+library (ggplot2)
+library(reshape2)
+library(cowplot)
+
+```
+
+
+
+# 1.0 data
+```{r load}
+# nondownsampled data
+
+setwdir("~/Original_Data")
+
+# 2001413_1.0 fraction
+ 
+
+vcf_2001413_1.0 <- read.vcfR("nodownsampling_2001413_1_1866206_1_BM_MPD_U__MYE_MSC_M_EGG2_S25_L002_markdup_recalibrated_tnhaplotyper2.vcf.gz", verbose = FALSE )
+
+vcf_2001413_1.0 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_1.0 <- extract.gt(vcf_2001413_1.0, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_1.0[,] <- gsub(",", ">>", AD_2001413_1.0[ ,])
+lapply(AD_2001413_1.0,class) # check class of all columns
+
+AD_2001413_1.0_2 <- sub(".*>>", "", AD_2001413_1.0) # returns only mutation reads(alt)
+as.numeric(AD_2001413_1.0_2)
+
+
+# DP
+DP_2001413_1.0 <- extract_info_tidy(vcf_2001413_1.0, info_fields = 'DP') 
+
+# AF
+AF_2001413_1.0 <-extract.gt(vcf_2001413_1.0, element = 'AF', as.numeric = TRUE)
+AF_2001413_1.0 <- AF_2001413_1.0 * 100
+AF_DP_2001413_1.0 <- cbind(AF_2001413_1.0, DP_2001413_1.0)
+AF_DP_2001413_1.0 <- AF_DP_2001413_1.0 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_1.0)[2] <- "DP_1.0"
+AF_DP_2001413_1.0['Sample']='2001413'
+
+# 2001887_1.0 fraction
+
+vcf_2001887_1.0 <- read.vcfR("nodownsampling_2001887_1_4550997_1_BM_AML_MYE_MSC_F_EGG2_S31_L002_markdup_recalibrated_tnhaplotyper2.vcf.gz",verbose = FALSE )
+
+vcf_2001887_1.0 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_1.0 <- extract.gt(vcf_2001887_1.0, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_1.0[,] <- gsub(",", ">>", AD_2001887_1.0[ ,])
+lapply(AD_2001887_1.0,class) # check class of all columns
+
+AD_2001887_1.0_2 <- sub(".*>>", "", AD_2001887_1.0) # returns only mutation reads(alt)
+as.numeric(AD_2001887_1.0_2)
+
+
+# DP
+DP_2001887_1.0 <- extract_info_tidy(vcf_2001887_1.0, info_fields = 'DP') 
+
+# AF
+AF_2001887_1.0 <-extract.gt(vcf_2001887_1.0, element = 'AF', as.numeric = TRUE)
+AF_2001887_1.0 <- AF_2001887_1.0 * 100
+AF_DP_2001887_1.0 <- cbind(AF_2001887_1.0, DP_2001887_1.0)
+AF_DP_2001887_1.0 <- AF_DP_2001887_1.0 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_1.0)[2] <- "DP_1.0"
+AF_DP_2001887_1.0['Sample']='2001887'
+
+# 2003928_1.0
+vcf_2003928_1.0 <- read.vcfR("nodownsampling_2003928_1_20185Z0066_1_PB_CLL_MYE_MSC_M_EGG2_S37_L002_markdup_recalibrated_tnhaplotyper2.vcf.gz", verbose = FALSE )
+
+vcf_2003928_1.0 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_1.0 <- extract.gt(vcf_2003928_1.0, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_1.0[,] <- gsub(",", ">>", AD_2003928_1.0[ ,])
+lapply(AD_2003928_1.0,class) # check class of all columns
+
+AD_2003928_1.0_2 <- sub(".*>>", "", AD_2003928_1.0) # returns only mutation reads(alt)
+as.numeric(AD_2003928_1.0_2)
+
+
+# DP
+DP_2003928_1.0 <- extract_info_tidy(vcf_2003928_1.0, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_1.0 <-extract.gt(vcf_2003928_1.0, element = 'AF', as.numeric = TRUE)
+AF_2003928_1.0 <- AF_2003928_1.0 * 100
+AF_DP_2003928_1.0 <- cbind(AF_2003928_1.0, DP_2003928_1.0)
+AF_DP_2003928_1.0 <- AF_DP_2003928_1.0 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_1.0)[2] <- "DP_1.0"
+AF_DP_2003928_1.0['Sample']='2003928'
+
+# 2004169_1.0
+vcf_2004169_1.0 <- read.vcfR("nodownsampling_2004169_1_20197Z0002_1_PB_AML_MYE_MSC_M_EGG2_S43_L002_markdup_recalibrated_tnhaplotyper2.vcf.gz", verbose = FALSE )
+
+vcf_2004169_1.0 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_1.0 <- extract.gt(vcf_2004169_1.0, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_1.0[,] <- gsub(",", ">>", AD_2004169_1.0[ ,])
+lapply(AD_2004169_1.0,class) # check class of all columns
+
+AD_2004169_1.0_2 <- sub(".*>>", "", AD_2004169_1.0) # returns only mutation reads(alt)
+as.numeric(AD_2004169_1.0_2)
+
+
+# DP
+DP_2004169_1.0 <- extract_info_tidy(vcf_2004169_1.0, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_1.0 <-extract.gt(vcf_2004169_1.0, element = 'AF', as.numeric = TRUE)
+AF_2004169_1.0 <- AF_2004169_1.0 * 100
+AF_DP_2004169_1.0 <- cbind(AF_2004169_1.0, DP_2004169_1.0)
+AF_DP_2004169_1.0 <- AF_DP_2004169_1.0 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_1.0)[2] <- "DP_1.0"
+AF_DP_2004169_1.0['Sample']='2004169'
+```
+#0.5% data
+
+```{r load}
+
+
+setwdir(~/Downsampled_Data)
+
+# 2001413 0.5 fraction
+
+vcf_2001413_0.5 <- read.vcfR("merged_2001413_0.5.vcf.gz", verbose = FALSE )
+
+vcf_2001413_0.5 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.5 <- extract.gt(vcf_2001413_0.5, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.5[,] <- gsub(",", ">>", AD_2001413_0.5[ ,])
+lapply(AD_2001413_0.5,class) # check class of all columns
+
+AD_2001413_0.5_2 <- sub(".*>>", "", AD_2001413_0.5) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.5_2)
+
+
+# DP
+DP_2001413_0.5 <- extract_info_tidy(vcf_2001413_0.5, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.5 <-extract.gt(vcf_2001413_0.5, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.5 <- AF_2001413_0.5 * 100
+AF_DP_2001413_0.5 <- cbind(AF_2001413_0.5, DP_2001413_0.5)
+AF_DP_2001413_0.5 <- AF_DP_2001413_0.5 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.5)[11] <- "DP_0.5"
+AF_DP_2001413_0.5['Sample']='2001413'
+
+# 2001887 0.5 fraction
+
+vcf_2001887_0.5 <- read.vcfR("merged_2001887_0.5.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.5 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.5 <- extract.gt(vcf_2001887_0.5, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.5[,] <- gsub(",", ">>", AD_2001887_0.5[ ,])
+lapply(AD_2001887_0.5,class) # check class of all columns
+
+AD_2001887_0.5_2 <- sub(".*>>", "", AD_2001887_0.5) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.5_2)
+
+
+# DP
+DP_2001887_0.5 <- extract_info_tidy(vcf_2001887_0.5, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.5 <-extract.gt(vcf_2001887_0.5, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.5 <- AF_2001887_0.5 * 100
+AF_DP_2001887_0.5 <- cbind(AF_2001887_0.5, DP_2001887_0.5)
+AF_DP_2001887_0.5 <- AF_DP_2001887_0.5 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.5)[11] <- "DP_0.5"
+AF_DP_2001887_0.5['Sample']='2001887'
+
+
+# 2003928 0.5 fraction
+
+vcf_2003928_0.5 <- read.vcfR("merged_2003928_0.5.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.5 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.5 <- extract.gt(vcf_2003928_0.5, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.5[,] <- gsub(",", ">>", AD_2003928_0.5[ ,])
+lapply(AD_2003928_0.5,class) # check class of all columns
+
+AD_2003928_0.5_2 <- sub(".*>>", "", AD_2003928_0.5) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.5_2)
+
+
+# DP
+DP_2003928_0.5 <- extract_info_tidy(vcf_2003928_0.5, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.5 <-extract.gt(vcf_2003928_0.5, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.5 <- AF_2003928_0.5 * 100
+AF_DP_2003928_0.5 <- cbind(AF_2003928_0.5, DP_2003928_0.5)
+AF_DP_2003928_0.5 <- AF_DP_2003928_0.5 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.5)[11] <- "DP_0.5"
+AF_DP_2003928_0.5['Sample']='2003928'
+
+# 2004169 0.5 fraction
+
+vcf_2004169_0.5 <- read.vcfR("merged_2004169_0.5.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.5 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.5 <- extract.gt(vcf_2004169_0.5, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.5[,] <- gsub(",", ">>", AD_2004169_0.5[ ,])
+lapply(AD_2004169_0.5,class) # check class of all columns
+
+AD_2004169_0.5_2 <- sub(".*>>", "", AD_2004169_0.5) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.5_2)
+
+
+# DP
+DP_2004169_0.5 <- extract_info_tidy(vcf_2004169_0.5, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.5 <-extract.gt(vcf_2004169_0.5, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.5 <- AF_2004169_0.5 * 100
+AF_DP_2004169_0.5 <- cbind(AF_2004169_0.5, DP_2004169_0.5)
+AF_DP_2004169_0.5 <- AF_DP_2004169_0.5 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.5)[11] <- "DP_0.5"
+AF_DP_2004169_0.5['Sample']='2004169'
+```
+#0.25 data
+
+```{r load}
+# 2001413 0.25 fraction
+
+# 0.25
+vcf_2001413_0.25 <- read.vcfR("merged_2001413_0.25.vcf.gz", verbose = FALSE )
+
+vcf_2001413_0.25 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.25 <- extract.gt(vcf_2001413_0.25, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.25[,] <- gsub(",", ">>", AD_2001413_0.25[ ,])
+lapply(AD_2001413_0.25,class) # check class of all columns
+
+AD_2001413_0.25_2 <- sub(".*>>", "", AD_2001413_0.25) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.25_2)
+
+
+# DP
+DP_2001413_0.25 <- extract_info_tidy(vcf_2001413_0.25, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.25 <-extract.gt(vcf_2001413_0.25, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.25 <- AF_2001413_0.25 * 100
+AF_DP_2001413_0.25 <- cbind(AF_2001413_0.25, DP_2001413_0.25)
+AF_DP_2001413_0.25 <- AF_DP_2001413_0.25 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.25)[11] <- "DP_0.25"
+AF_DP_2001413_0.25['Sample']='2001413'
+
+
+# 2001887 0.25
+
+vcf_2001887_0.25 <- read.vcfR("merged_2001887_0.25.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.25 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.25 <- extract.gt(vcf_2001887_0.25, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.25[,] <- gsub(",", ">>", AD_2001887_0.25[ ,])
+lapply(AD_2001887_0.25,class) # check class of all columns
+
+AD_2001887_0.25_2 <- sub(".*>>", "", AD_2001887_0.25) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.25_2)
+
+
+# DP
+DP_2001887_0.25 <- extract_info_tidy(vcf_2001887_0.25, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.25 <-extract.gt(vcf_2001887_0.25, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.25 <- AF_2001887_0.25 * 100
+AF_DP_2001887_0.25 <- cbind(AF_2001887_0.25, DP_2001887_0.25)
+AF_DP_2001887_0.25 <- AF_DP_2001887_0.25 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.25)[11] <- "DP_0.25"
+AF_DP_2001887_0.25['Sample']='2001887'
+
+#2003928 0.25
+
+vcf_2003928_0.25 <- read.vcfR("merged_2003928_0.25.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.25 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.25 <- extract.gt(vcf_2003928_0.25, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.25[,] <- gsub(",", ">>", AD_2003928_0.25[ ,])
+lapply(AD_2003928_0.25,class) # check class of all columns
+
+AD_2003928_0.25_2 <- sub(".*>>", "", AD_2003928_0.25) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.25_2)
+
+
+# DP
+DP_2003928_0.25 <- extract_info_tidy(vcf_2003928_0.25, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.25 <-extract.gt(vcf_2003928_0.25, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.25 <- AF_2003928_0.25 * 100
+AF_DP_2003928_0.25 <- cbind(AF_2003928_0.25, DP_2003928_0.25)
+AF_DP_2003928_0.25 <- AF_DP_2003928_0.25 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.25)[11] <- "DP_0.25"
+AF_DP_2003928_0.25['Sample']='2003928'
+
+#2004169 0.25
+
+vcf_2004169_0.25 <- read.vcfR("merged_2004169_0.25.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.25 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.25 <- extract.gt(vcf_2004169_0.25, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.25[,] <- gsub(",", ">>", AD_2004169_0.25[ ,])
+lapply(AD_2004169_0.25,class) # check class of all columns
+
+AD_2004169_0.25_2 <- sub(".*>>", "", AD_2004169_0.25) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.25_2)
+
+
+# DP
+DP_2004169_0.25 <- extract_info_tidy(vcf_2004169_0.25, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.25 <-extract.gt(vcf_2004169_0.25, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.25 <- AF_2004169_0.25 * 100
+AF_DP_2004169_0.25 <- cbind(AF_2004169_0.25, DP_2004169_0.25)
+AF_DP_2004169_0.25 <- AF_DP_2004169_0.25 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.25)[11] <- "DP_0.25"
+AF_DP_2004169_0.25['Sample']='2004169'
+
+```
+#0.14 data
+
+```{r load}
+# 2001413 0.14 fraction
+
+# 0.14
+vcf_2001413_0.14 <- read.vcfR("merged_2001413_0.14.vcf.gz", verbose = FALSE)
+
+vcf_2001413_0.14 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.14 <- extract.gt(vcf_2001413_0.14, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.14[,] <- gsub(",", ">>", AD_2001413_0.14[ ,])
+lapply(AD_2001413_0.14,class) # check class of all columns
+
+AD_2001413_0.14_2 <- sub(".*>>", "", AD_2001413_0.14) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.14_2)
+
+
+# DP
+DP_2001413_0.14 <- extract_info_tidy(vcf_2001413_0.14, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.14 <-extract.gt(vcf_2001413_0.14, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.14 <- AF_2001413_0.14 * 100
+AF_DP_2001413_0.14 <- cbind(AF_2001413_0.14, DP_2001413_0.14)
+AF_DP_2001413_0.14 <- AF_DP_2001413_0.14 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.14)[11] <- "DP_0.14"
+AF_DP_2001413_0.14['Sample']='2001413'
+
+
+# 2001887 0.14
+
+vcf_2001887_0.14 <- read.vcfR("merged_2001887_0.14.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.14 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.14 <- extract.gt(vcf_2001887_0.14, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.14[,] <- gsub(",", ">>", AD_2001887_0.14[ ,])
+lapply(AD_2001887_0.14,class) # check class of all columns
+
+AD_2001887_0.14_2 <- sub(".*>>", "", AD_2001887_0.14) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.14_2)
+
+
+# DP
+DP_2001887_0.14 <- extract_info_tidy(vcf_2001887_0.14, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.14 <-extract.gt(vcf_2001887_0.14, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.14 <- AF_2001887_0.14 * 100
+AF_DP_2001887_0.14 <- cbind(AF_2001887_0.14, DP_2001887_0.14)
+AF_DP_2001887_0.14 <- AF_DP_2001887_0.14 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.14)[11] <- "DP_0.14"
+AF_DP_2001887_0.14['Sample']='2001887'
+
+#2003928 0.14
+
+vcf_2003928_0.14 <- read.vcfR("merged_2003928_0.14.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.14 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.14 <- extract.gt(vcf_2003928_0.14, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.14[,] <- gsub(",", ">>", AD_2003928_0.14[ ,])
+lapply(AD_2003928_0.14,class) # check class of all columns
+
+AD_2003928_0.14_2 <- sub(".*>>", "", AD_2003928_0.14) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.14_2)
+
+
+# DP
+DP_2003928_0.14 <- extract_info_tidy(vcf_2003928_0.14, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.14 <-extract.gt(vcf_2003928_0.14, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.14 <- AF_2003928_0.14 * 100
+AF_DP_2003928_0.14 <- cbind(AF_2003928_0.14, DP_2003928_0.14)
+AF_DP_2003928_0.14 <- AF_DP_2003928_0.14 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.14)[11] <- "DP_0.14"
+AF_DP_2003928_0.14['Sample']='2003928'
+
+#2004169 0.14
+
+vcf_2004169_0.14 <- read.vcfR("merged_2004169_0.14.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.14 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.14 <- extract.gt(vcf_2004169_0.14, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.14[,] <- gsub(",", ">>", AD_2004169_0.14[ ,])
+lapply(AD_2004169_0.14,class) # check class of all columns
+
+AD_2004169_0.14_2 <- sub(".*>>", "", AD_2004169_0.14) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.14_2)
+
+
+# DP
+DP_2004169_0.14 <- extract_info_tidy(vcf_2004169_0.14, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.14 <-extract.gt(vcf_2004169_0.14, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.14 <- AF_2004169_0.14 * 100
+AF_DP_2004169_0.14 <- cbind(AF_2004169_0.14, DP_2004169_0.14)
+AF_DP_2004169_0.14 <- AF_DP_2004169_0.14 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.14)[11] <- "DP_0.14"
+AF_DP_2004169_0.14['Sample']='2004169'
+```
+#0.11 data
+
+```{r load}
+
+# 2001413 0.11 fraction
+
+# 0.11
+vcf_2001413_0.11 <- read.vcfR("merged_2001413_0.11.vcf.gz", verbose = FALSE)
+
+vcf_2001413_0.11 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.11 <- extract.gt(vcf_2001413_0.11, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.11[,] <- gsub(",", ">>", AD_2001413_0.11[ ,])
+lapply(AD_2001413_0.11,class) # check class of all columns
+
+AD_2001413_0.11_2 <- sub(".*>>", "", AD_2001413_0.11) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.11_2)
+
+
+# DP
+DP_2001413_0.11 <- extract_info_tidy(vcf_2001413_0.11, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.11 <-extract.gt(vcf_2001413_0.11, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.11 <- AF_2001413_0.11 * 100
+AF_DP_2001413_0.11 <- cbind(AF_2001413_0.11, DP_2001413_0.11)
+AF_DP_2001413_0.11 <- AF_DP_2001413_0.11 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.11)[11] <- "DP_0.11"
+AF_DP_2001413_0.11['Sample']='2001413'
+
+
+# 2001887 0.11
+
+vcf_2001887_0.11 <- read.vcfR("merged_2001887_0.11.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.11 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.11 <- extract.gt(vcf_2001887_0.11, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.11[,] <- gsub(",", ">>", AD_2001887_0.11[ ,])
+lapply(AD_2001887_0.11,class) # check class of all columns
+
+AD_2001887_0.11_2 <- sub(".*>>", "", AD_2001887_0.11) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.11_2)
+
+
+# DP
+DP_2001887_0.11 <- extract_info_tidy(vcf_2001887_0.11, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.11 <-extract.gt(vcf_2001887_0.11, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.11 <- AF_2001887_0.11 * 100
+AF_DP_2001887_0.11 <- cbind(AF_2001887_0.11, DP_2001887_0.11)
+AF_DP_2001887_0.11 <- AF_DP_2001887_0.11 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.11)[11] <- "DP_0.11"
+AF_DP_2001887_0.11['Sample']='2001887'
+
+#2003928 0.11
+
+vcf_2003928_0.11 <- read.vcfR("merged_2003928_0.11.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.11 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.11 <- extract.gt(vcf_2003928_0.11, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.11[,] <- gsub(",", ">>", AD_2003928_0.11[ ,])
+lapply(AD_2003928_0.11,class) # check class of all columns
+
+AD_2003928_0.11_2 <- sub(".*>>", "", AD_2003928_0.11) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.11_2)
+
+
+# DP
+DP_2003928_0.11 <- extract_info_tidy(vcf_2003928_0.11, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.11 <-extract.gt(vcf_2003928_0.11, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.11 <- AF_2003928_0.11 * 100
+AF_DP_2003928_0.11 <- cbind(AF_2003928_0.11, DP_2003928_0.11)
+AF_DP_2003928_0.11 <- AF_DP_2003928_0.11 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.11)[11] <- "DP_0.11"
+AF_DP_2003928_0.11['Sample']='2003928'
+
+#2004169 0.11
+
+vcf_2004169_0.11 <- read.vcfR("merged_2004169_0.11.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.11 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.11 <- extract.gt(vcf_2004169_0.11, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.11[,] <- gsub(",", ">>", AD_2004169_0.11[ ,])
+lapply(AD_2004169_0.11,class) # check class of all columns
+
+AD_2004169_0.11_2 <- sub(".*>>", "", AD_2004169_0.11) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.11_2)
+
+
+# DP
+DP_2004169_0.11 <- extract_info_tidy(vcf_2004169_0.11, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.11 <-extract.gt(vcf_2004169_0.11, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.11 <- AF_2004169_0.11 * 100
+AF_DP_2004169_0.11 <- cbind(AF_2004169_0.11, DP_2004169_0.11)
+AF_DP_2004169_0.11 <- AF_DP_2004169_0.11 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.11)[11] <- "DP_0.11"
+AF_DP_2004169_0.11['Sample']='2004169'
+
+```
+#0.07 data
+```{r load}
+# 2001413 0.07 fraction
+
+# 0.07
+vcf_2001413_0.07 <- read.vcfR("merged_2001413_0.07.vcf.gz", verbose = FALSE)
+
+vcf_2001413_0.07 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.07 <- extract.gt(vcf_2001413_0.07, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.07[,] <- gsub(",", ">>", AD_2001413_0.07[ ,])
+lapply(AD_2001413_0.07,class) # check class of all columns
+
+AD_2001413_0.07_2 <- sub(".*>>", "", AD_2001413_0.07) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.07_2)
+
+
+# DP
+DP_2001413_0.07 <- extract_info_tidy(vcf_2001413_0.07, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.07 <-extract.gt(vcf_2001413_0.07, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.07 <- AF_2001413_0.07 * 100
+AF_DP_2001413_0.07 <- cbind(AF_2001413_0.07, DP_2001413_0.07)
+AF_DP_2001413_0.07 <- AF_DP_2001413_0.07 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.07)[11] <- "DP_0.07"
+AF_DP_2001413_0.07['Sample']='2001413'
+
+
+# 2001887 0.07
+
+vcf_2001887_0.07 <- read.vcfR("merged_2001887_0.07.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.07 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.07 <- extract.gt(vcf_2001887_0.07, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.07[,] <- gsub(",", ">>", AD_2001887_0.07[ ,])
+lapply(AD_2001887_0.07,class) # check class of all columns
+
+AD_2001887_0.07_2 <- sub(".*>>", "", AD_2001887_0.07) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.07_2)
+
+
+# DP
+DP_2001887_0.07 <- extract_info_tidy(vcf_2001887_0.07, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.07 <-extract.gt(vcf_2001887_0.07, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.07 <- AF_2001887_0.07 * 100
+AF_DP_2001887_0.07 <- cbind(AF_2001887_0.07, DP_2001887_0.07)
+AF_DP_2001887_0.07 <- AF_DP_2001887_0.07 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.07)[11] <- "DP_0.07"
+AF_DP_2001887_0.07['Sample']='2001887'
+
+#2003928 0.07
+
+vcf_2003928_0.07 <- read.vcfR("merged_2003928_0.07.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.07 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.07 <- extract.gt(vcf_2003928_0.07, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.07[,] <- gsub(",", ">>", AD_2003928_0.07[ ,])
+lapply(AD_2003928_0.07,class) # check class of all columns
+
+AD_2003928_0.07_2 <- sub(".*>>", "", AD_2003928_0.07) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.07_2)
+
+
+# DP
+DP_2003928_0.07 <- extract_info_tidy(vcf_2003928_0.07, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.07 <-extract.gt(vcf_2003928_0.07, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.07 <- AF_2003928_0.07 * 100
+AF_DP_2003928_0.07 <- cbind(AF_2003928_0.07, DP_2003928_0.07)
+AF_DP_2003928_0.07 <- AF_DP_2003928_0.07 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.07)[11] <- "DP_0.07"
+AF_DP_2003928_0.07['Sample']='2003928'
+
+#2004169 0.07
+
+vcf_2004169_0.07 <- read.vcfR("merged_2004169_0.07.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.07 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.07 <- extract.gt(vcf_2004169_0.07, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.07[,] <- gsub(",", ">>", AD_2004169_0.07[ ,])
+lapply(AD_2004169_0.07,class) # check class of all columns
+
+AD_2004169_0.07_2 <- sub(".*>>", "", AD_2004169_0.07) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.07_2)
+
+
+# DP
+DP_2004169_0.07 <- extract_info_tidy(vcf_2004169_0.07, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.07 <-extract.gt(vcf_2004169_0.07, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.07 <- AF_2004169_0.07 * 100
+AF_DP_2004169_0.07 <- cbind(AF_2004169_0.07, DP_2004169_0.07)
+AF_DP_2004169_0.07 <- AF_DP_2004169_0.07 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.07)[11] <- "DP_0.07"
+AF_DP_2004169_0.07['Sample']='2004169'
+```
+#0.036 data
+
+```{r load}
+# 2001413 0.036 fraction
+
+vcf_2001413_0.036 <- read.vcfR("merged_2001413_0.036.vcf.gz", verbose = FALSE)
+
+vcf_2001413_0.036 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.036 <- extract.gt(vcf_2001413_0.036, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.036[,] <- gsub(",", ">>", AD_2001413_0.036[ ,])
+lapply(AD_2001413_0.036,class) # check class of all columns
+
+AD_2001413_0.036_2 <- sub(".*>>", "", AD_2001413_0.036) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.036_2)
+
+
+# DP
+DP_2001413_0.036 <- extract_info_tidy(vcf_2001413_0.036, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.036 <-extract.gt(vcf_2001413_0.036, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.036 <- AF_2001413_0.036 * 100
+AF_DP_2001413_0.036 <- cbind(AF_2001413_0.036, DP_2001413_0.036)
+AF_DP_2001413_0.036 <- AF_DP_2001413_0.036 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.036)[11] <- "DP_0.036"
+AF_DP_2001413_0.036['Sample']='2001413'
+
+
+# 2001887 0.036
+
+vcf_2001887_0.036 <- read.vcfR("merged_2001887_0.036.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.036 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.036 <- extract.gt(vcf_2001887_0.036, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.036[,] <- gsub(",", ">>", AD_2001887_0.036[ ,])
+lapply(AD_2001887_0.036,class) # check class of all columns
+
+AD_2001887_0.036_2 <- sub(".*>>", "", AD_2001887_0.036) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.036_2)
+
+
+# DP
+DP_2001887_0.036 <- extract_info_tidy(vcf_2001887_0.036, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.036 <-extract.gt(vcf_2001887_0.036, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.036 <- AF_2001887_0.036 * 100
+AF_DP_2001887_0.036 <- cbind(AF_2001887_0.036, DP_2001887_0.036)
+AF_DP_2001887_0.036 <- AF_DP_2001887_0.036 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.036)[11] <- "DP_0.036"
+AF_DP_2001887_0.036['Sample']='2001887'
+
+#2003928 0.036
+
+vcf_2003928_0.036 <- read.vcfR("merged_2003928_0.036.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.036 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.036 <- extract.gt(vcf_2003928_0.036, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.036[,] <- gsub(",", ">>", AD_2003928_0.036[ ,])
+lapply(AD_2003928_0.036,class) # check class of all columns
+
+AD_2003928_0.036_2 <- sub(".*>>", "", AD_2003928_0.036) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.036_2)
+
+
+# DP
+DP_2003928_0.036 <- extract_info_tidy(vcf_2003928_0.036, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.036 <-extract.gt(vcf_2003928_0.036, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.036 <- AF_2003928_0.036 * 100
+AF_DP_2003928_0.036 <- cbind(AF_2003928_0.036, DP_2003928_0.036)
+AF_DP_2003928_0.036 <- AF_DP_2003928_0.036 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.036)[11] <- "DP_0.036"
+AF_DP_2003928_0.036['Sample']='2003928'
+
+#2004169 0.036
+
+vcf_2004169_0.036 <- read.vcfR("merged_2004169_0.036.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.036 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.036 <- extract.gt(vcf_2004169_0.036, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.036[,] <- gsub(",", ">>", AD_2004169_0.036[ ,])
+lapply(AD_2004169_0.036,class) # check class of all columns
+
+AD_2004169_0.036_2 <- sub(".*>>", "", AD_2004169_0.036) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.036_2)
+
+
+# DP
+DP_2004169_0.036 <- extract_info_tidy(vcf_2004169_0.036, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.036 <-extract.gt(vcf_2004169_0.036, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.036 <- AF_2004169_0.036 * 100
+AF_DP_2004169_0.036 <- cbind(AF_2004169_0.036, DP_2004169_0.036)
+AF_DP_2004169_0.036 <- AF_DP_2004169_0.036 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.036)[11] <- "DP_0.036"
+AF_DP_2004169_0.036['Sample']='2004169'
+
+```
+#0.018 data
+
+```{r load}
+# 2001413 0.018 fraction
+
+# 0.18
+vcf_2001413_0.018 <- read.vcfR("merged_2001413_0.018.vcf.gz", verbose = FALSE )
+
+vcf_2001413_0.018 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.018 <- extract.gt(vcf_2001413_0.018, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.018[,] <- gsub(",", ">>", AD_2001413_0.018[ ,])
+lapply(AD_2001413_0.018,class) # check class of all columns
+
+AD_2001413_0.018_2 <- sub(".*>>", "", AD_2001413_0.018) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.018_2)
+
+
+# DP
+DP_2001413_0.018 <- extract_info_tidy(vcf_2001413_0.018, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.018 <-extract.gt(vcf_2001413_0.018, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.018 <- AF_2001413_0.018 * 100
+AF_DP_2001413_0.018 <- cbind(AF_2001413_0.018, DP_2001413_0.018)
+AF_DP_2001413_0.018 <- AF_DP_2001413_0.018 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.018)[11] <- "DP_0.018"
+AF_DP_2001413_0.018['Sample']='2001413'
+
+
+# 2001887 0.018
+
+vcf_2001887_0.018 <- read.vcfR("merged_2001887_0.018.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.018 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.018 <- extract.gt(vcf_2001887_0.018, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.018[,] <- gsub(",", ">>", AD_2001887_0.018[ ,])
+lapply(AD_2001887_0.018,class) # check class of all columns
+
+AD_2001887_0.018_2 <- sub(".*>>", "", AD_2001887_0.018) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.018_2)
+
+
+# DP
+DP_2001887_0.018 <- extract_info_tidy(vcf_2001887_0.018, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.018 <-extract.gt(vcf_2001887_0.018, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.018 <- AF_2001887_0.018 * 100
+AF_DP_2001887_0.018 <- cbind(AF_2001887_0.018, DP_2001887_0.018)
+AF_DP_2001887_0.018 <- AF_DP_2001887_0.018 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.018)[11] <- "DP_0.018"
+AF_DP_2001887_0.018['Sample']='2001887'
+
+#2003928 0.018
+
+vcf_2003928_0.018 <- read.vcfR("merged_2003928_0.018.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.018 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.018 <- extract.gt(vcf_2003928_0.018, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.018[,] <- gsub(",", ">>", AD_2003928_0.018[ ,])
+lapply(AD_2003928_0.018,class) # check class of all columns
+
+AD_2003928_0.018_2 <- sub(".*>>", "", AD_2003928_0.018) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.018_2)
+
+
+# DP
+DP_2003928_0.018 <- extract_info_tidy(vcf_2003928_0.018, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.018 <-extract.gt(vcf_2003928_0.018, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.018 <- AF_2003928_0.018 * 100
+AF_DP_2003928_0.018 <- cbind(AF_2003928_0.018, DP_2003928_0.018)
+AF_DP_2003928_0.018 <- AF_DP_2003928_0.018 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.018)[11] <- "DP_0.018"
+AF_DP_2003928_0.018['Sample']='2003928'
+
+#2004169 0.018
+
+vcf_2004169_0.018 <- read.vcfR("merged_2004169_0.018.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.018 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.018 <- extract.gt(vcf_2004169_0.018, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.018[,] <- gsub(",", ">>", AD_2004169_0.018[ ,])
+lapply(AD_2004169_0.018,class) # check class of all columns
+
+AD_2004169_0.018_2 <- sub(".*>>", "", AD_2004169_0.018) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.018_2)
+
+
+# DP
+DP_2004169_0.018 <- extract_info_tidy(vcf_2004169_0.018, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.018 <-extract.gt(vcf_2004169_0.018, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.018 <- AF_2004169_0.018 * 100
+AF_DP_2004169_0.018 <- cbind(AF_2004169_0.018, DP_2004169_0.018)
+AF_DP_2004169_0.018 <- AF_DP_2004169_0.018 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.018)[11] <- "DP_0.018"
+AF_DP_2004169_0.018['Sample']='2004169'
+```
+#0.014 data
+
+```{r load}
+# 2001413 0.014 fraction
+
+# 0.14
+vcf_2001413_0.014 <- read.vcfR("merged_2001413_0.014.vcf.gz", verbose = FALSE )
+
+vcf_2001413_0.014 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.014 <- extract.gt(vcf_2001413_0.014, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.014[,] <- gsub(",", ">>", AD_2001413_0.014[ ,])
+lapply(AD_2001413_0.014,class) # check class of all columns
+
+AD_2001413_0.014_2 <- sub(".*>>", "", AD_2001413_0.014) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.014_2)
+
+
+# DP
+DP_2001413_0.014 <- extract_info_tidy(vcf_2001413_0.014, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.014 <-extract.gt(vcf_2001413_0.014, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.014 <- AF_2001413_0.014 * 100
+AF_DP_2001413_0.014 <- cbind(AF_2001413_0.014, DP_2001413_0.014)
+AF_DP_2001413_0.014 <- AF_DP_2001413_0.014 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.014)[11] <- "DP_0.014"
+AF_DP_2001413_0.014['Sample']='2001413'
+
+
+# 2001887 0.014
+
+vcf_2001887_0.014 <- read.vcfR("merged_2001887_0.014.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.014 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.014 <- extract.gt(vcf_2001887_0.014, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.014[,] <- gsub(",", ">>", AD_2001887_0.014[ ,])
+lapply(AD_2001887_0.014,class) # check class of all columns
+
+AD_2001887_0.014_2 <- sub(".*>>", "", AD_2001887_0.014) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.014_2)
+
+
+# DP
+DP_2001887_0.014 <- extract_info_tidy(vcf_2001887_0.014, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.014 <-extract.gt(vcf_2001887_0.014, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.014 <- AF_2001887_0.014 * 100
+AF_DP_2001887_0.014 <- cbind(AF_2001887_0.014, DP_2001887_0.014)
+AF_DP_2001887_0.014 <- AF_DP_2001887_0.014 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.014)[11] <- "DP_0.014"
+AF_DP_2001887_0.014['Sample']='2001887'
+
+#2003928 0.014
+
+vcf_2003928_0.014 <- read.vcfR("merged_2003928_0.014.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.014 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.014 <- extract.gt(vcf_2003928_0.014, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.014[,] <- gsub(",", ">>", AD_2003928_0.014[ ,])
+lapply(AD_2003928_0.014,class) # check class of all columns
+
+AD_2003928_0.014_2 <- sub(".*>>", "", AD_2003928_0.014) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.014_2)
+
+
+# DP
+DP_2003928_0.014 <- extract_info_tidy(vcf_2003928_0.014, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.014 <-extract.gt(vcf_2003928_0.014, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.014 <- AF_2003928_0.014 * 100
+AF_DP_2003928_0.014 <- cbind(AF_2003928_0.014, DP_2003928_0.014)
+AF_DP_2003928_0.014 <- AF_DP_2003928_0.014 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.014)[11] <- "DP_0.014"
+AF_DP_2003928_0.014['Sample']='2003928'
+
+#2004169 0.014
+
+vcf_2004169_0.014 <- read.vcfR("merged_2004169_0.014.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.014 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.014 <- extract.gt(vcf_2004169_0.014, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.014[,] <- gsub(",", ">>", AD_2004169_0.014[ ,])
+lapply(AD_2004169_0.014,class) # check class of all columns
+
+AD_2004169_0.014_2 <- sub(".*>>", "", AD_2004169_0.014) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.014_2)
+
+
+# DP
+DP_2004169_0.014 <- extract_info_tidy(vcf_2004169_0.014, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.014 <-extract.gt(vcf_2004169_0.014, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.014 <- AF_2004169_0.014 * 100
+AF_DP_2004169_0.014 <- cbind(AF_2004169_0.014, DP_2004169_0.014)
+AF_DP_2004169_0.014 <- AF_DP_2004169_0.014 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.014)[11] <- "DP_0.014"
+AF_DP_2004169_0.014['Sample']='2004169'
+```
+#0.007
+
+```{r load}
+# 2001413 0.007 fraction
+
+vcf_2001413_0.007 <- read.vcfR("merged_2001413_0.007.vcf.gz", verbose = FALSE )
+
+vcf_2001413_0.007 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001413_0.007 <- extract.gt(vcf_2001413_0.007, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001413_0.007[,] <- gsub(",", ">>", AD_2001413_0.007[ ,])
+lapply(AD_2001413_0.007,class) # check class of all columns
+
+AD_2001413_0.007_2 <- sub(".*>>", "", AD_2001413_0.007) # returns only mutation reads(alt)
+as.numeric(AD_2001413_0.007_2)
+
+
+# DP
+DP_2001413_0.007 <- extract_info_tidy(vcf_2001413_0.007, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001413_0.007 <-extract.gt(vcf_2001413_0.007, element = 'AF', as.numeric = TRUE)
+AF_2001413_0.007 <- AF_2001413_0.007 * 100
+AF_DP_2001413_0.007 <- cbind(AF_2001413_0.007, DP_2001413_0.007)
+AF_DP_2001413_0.007 <- AF_DP_2001413_0.007 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001413_0.007)[11] <- "DP_0.007"
+AF_DP_2001413_0.007['Sample']='2001413'
+
+
+# 2001887 0.007
+
+vcf_2001887_0.007 <- read.vcfR("merged_2001887_0.007.vcf.gz", verbose = FALSE )
+
+vcf_2001887_0.007 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2001887_0.007 <- extract.gt(vcf_2001887_0.007, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2001887_0.007[,] <- gsub(",", ">>", AD_2001887_0.007[ ,])
+lapply(AD_2001887_0.007,class) # check class of all columns
+
+AD_2001887_0.007_2 <- sub(".*>>", "", AD_2001887_0.007) # returns only mutation reads(alt)
+as.numeric(AD_2001887_0.007_2)
+
+
+# DP
+DP_2001887_0.007 <- extract_info_tidy(vcf_2001887_0.007, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2001887_0.007 <-extract.gt(vcf_2001887_0.007, element = 'AF', as.numeric = TRUE)
+AF_2001887_0.007 <- AF_2001887_0.007 * 100
+AF_DP_2001887_0.007 <- cbind(AF_2001887_0.007, DP_2001887_0.007)
+AF_DP_2001887_0.007 <- AF_DP_2001887_0.007 %>% select(-starts_with("Key"))
+colnames(AF_DP_2001887_0.007)[11] <- "DP_0.007"
+AF_DP_2001887_0.007['Sample']='2001887'
+
+#2003928 0.007
+
+vcf_2003928_0.007 <- read.vcfR("merged_2003928_0.007.vcf.gz", verbose = FALSE )
+
+vcf_2003928_0.007 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2003928_0.007 <- extract.gt(vcf_2003928_0.007, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2003928_0.007[,] <- gsub(",", ">>", AD_2003928_0.007[ ,])
+lapply(AD_2003928_0.007,class) # check class of all columns
+
+AD_2003928_0.007_2 <- sub(".*>>", "", AD_2003928_0.007) # returns only mutation reads(alt)
+as.numeric(AD_2003928_0.007_2)
+
+
+# DP
+DP_2003928_0.007 <- extract_info_tidy(vcf_2003928_0.007, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2003928_0.007 <-extract.gt(vcf_2003928_0.007, element = 'AF', as.numeric = TRUE)
+AF_2003928_0.007 <- AF_2003928_0.007 * 100
+AF_DP_2003928_0.007 <- cbind(AF_2003928_0.007, DP_2003928_0.007)
+AF_DP_2003928_0.007 <- AF_DP_2003928_0.007 %>% select(-starts_with("Key"))
+colnames(AF_DP_2003928_0.007)[11] <- "DP_0.007"
+AF_DP_2003928_0.007['Sample']='2003928'
+
+#2004169 0.007
+
+vcf_2004169_0.007 <- read.vcfR("merged_2004169_0.007.vcf.gz", verbose = FALSE )
+
+vcf_2004169_0.007 # tells you how many samples, chromosomes, variants
+
+#Obtain important info from vcfs: AD, DP, AF
+# AD
+AD_2004169_0.007 <- extract.gt(vcf_2004169_0.007, element = "AD", as.numeric = FALSE) # 5+6 same 2+9+10 same
+AD_2004169_0.007[,] <- gsub(",", ">>", AD_2004169_0.007[ ,])
+lapply(AD_2004169_0.007,class) # check class of all columns
+
+AD_2004169_0.007_2 <- sub(".*>>", "", AD_2004169_0.007) # returns only mutation reads(alt)
+as.numeric(AD_2004169_0.007_2)
+
+
+# DP
+DP_2004169_0.007 <- extract_info_tidy(vcf_2004169_0.007, info_fields = 'DP') # 5+6 same 2+9+10 same
+
+
+# AF
+AF_2004169_0.007 <-extract.gt(vcf_2004169_0.007, element = 'AF', as.numeric = TRUE)
+AF_2004169_0.007 <- AF_2004169_0.007 * 100
+AF_DP_2004169_0.007 <- cbind(AF_2004169_0.007, DP_2004169_0.007)
+AF_DP_2004169_0.007 <- AF_DP_2004169_0.007 %>% select(-starts_with("Key"))
+colnames(AF_DP_2004169_0.007)[11] <- "DP_0.007"
+AF_DP_2004169_0.007['Sample']='2004169'

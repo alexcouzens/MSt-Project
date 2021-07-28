@@ -1,0 +1,99 @@
+---
+title: "DP per variant"
+author: "Alex Couzens"
+date: "14/07/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+chr4_105234882_DP_0.5 <- subset(AF_DP_2001413_0.5, rownames(AF_DP_2001413_0.5) %in% 'chr4_105234882')
+chr4_105234882_DP_0.5<- t(chr4_105234882_DP_0.5) #transpose
+chr4_105234882_DP_0.5 <- subset(chr4_105234882_DP_0.5,rownames(chr4_105234882_DP_0.5) %in% 'DP_0.5')
+chr4_105234882_DP_0.5 <-chr4_105234882_DP_0.5[rep(seq_len(nrow(chr4_105234882_DP_0.5)), each = 10), ] 
+chr4_105234882_DP_0.5 <- cbind(chr4_105234882_DP_0.5, new_col = vec)
+colnames(chr4_105234882_DP_0.5)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.5)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.5)<-c(1:10)
+
+chr4_105234882_DP_0.25 <- subset(AF_DP_2001413_0.25, rownames(AF_DP_2001413_0.25) %in% 'chr4_105234882')
+chr4_105234882_DP_0.25<- t(chr4_105234882_DP_0.25) #transpose
+chr4_105234882_DP_0.25 <- subset(chr4_105234882_DP_0.25,rownames(chr4_105234882_DP_0.25) %in% 'DP_0.25')
+chr4_105234882_DP_0.25 <-chr4_105234882_DP_0.25[rep(seq_len(nrow(chr4_105234882_DP_0.25)), each = 10), ]
+chr4_105234882_DP_0.25 <- cbind(chr4_105234882_DP_0.25, new_col = vec2)
+colnames(chr4_105234882_DP_0.25)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.25)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.25)<-c(11:20)
+
+chr4_105234882_DP_0.14 <- subset(AF_DP_2001413_0.14, rownames(AF_DP_2001413_0.14) %in% 'chr4_105234882')
+chr4_105234882_DP_0.14<- t(chr4_105234882_DP_0.14) #transpose
+chr4_105234882_DP_0.14 <- subset(chr4_105234882_DP_0.14,rownames(chr4_105234882_DP_0.14) %in% 'DP_0.14')
+chr4_105234882_DP_0.14 <-chr4_105234882_DP_0.14[rep(seq_len(nrow(chr4_105234882_DP_0.14)), each = 10), ]
+chr4_105234882_DP_0.14 <- cbind(chr4_105234882_DP_0.14, new_col = vec3)
+colnames(chr4_105234882_DP_0.14)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.14)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.14)<-c(21:30)
+
+chr4_105234882_DP_0.11 <- subset(AF_DP_2001413_0.11, rownames(AF_DP_2001413_0.11) %in% 'chr4_105234882')
+chr4_105234882_DP_0.11<- t(chr4_105234882_DP_0.11) #transpose
+chr4_105234882_DP_0.11 <- subset(chr4_105234882_DP_0.11,rownames(chr4_105234882_DP_0.11) %in% 'DP_0.11')
+chr4_105234882_DP_0.11 <-chr4_105234882_DP_0.11[rep(seq_len(nrow(chr4_105234882_DP_0.11)), each = 10), ]
+chr4_105234882_DP_0.11 <- cbind(chr4_105234882_DP_0.11, new_col = vec4)
+colnames(chr4_105234882_DP_0.11)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.11)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.11)<-c(31:40)
+
+chr4_105234882_DP_0.07 <- subset(AF_DP_2001413_0.07, rownames(AF_DP_2001413_0.07) %in% 'chr4_105234882')
+chr4_105234882_DP_0.07<- t(chr4_105234882_DP_0.07) #transpose
+chr4_105234882_DP_0.07 <- subset(chr4_105234882_DP_0.07,rownames(chr4_105234882_DP_0.07) %in% 'DP_0.07')
+chr4_105234882_DP_0.07 <-chr4_105234882_DP_0.07[rep(seq_len(nrow(chr4_105234882_DP_0.07)), each = 10), ]
+chr4_105234882_DP_0.07 <- cbind(chr4_105234882_DP_0.07, new_col = vec5)
+colnames(chr4_105234882_DP_0.07)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.07)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.07)<-c(41:50)
+
+chr4_105234882_DP_0.036 <- subset(AF_DP_2001413_0.036, rownames(AF_DP_2001413_0.036) %in% 'chr4_105234882')
+chr4_105234882_DP_0.036<- t(chr4_105234882_DP_0.036) #transpose
+chr4_105234882_DP_0.036 <- subset(chr4_105234882_DP_0.036,rownames(chr4_105234882_DP_0.036) %in% 'DP_0.036')
+chr4_105234882_DP_0.036 <-chr4_105234882_DP_0.036[rep(seq_len(nrow(chr4_105234882_DP_0.036)), each = 10), ]
+chr4_105234882_DP_0.036 <- cbind(chr4_105234882_DP_0.036, new_col = vec6)
+colnames(chr4_105234882_DP_0.036)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.036)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.036)<-c(51:60)
+
+chr4_105234882_DP_0.018 <- subset(AF_DP_2001413_0.018, rownames(AF_DP_2001413_0.018) %in% 'chr4_105234882')
+chr4_105234882_DP_0.018<- t(chr4_105234882_DP_0.018) #transpose
+chr4_105234882_DP_0.018 <- subset(chr4_105234882_DP_0.018,rownames(chr4_105234882_DP_0.018) %in% 'DP_0.018')
+chr4_105234882_DP_0.018 <-chr4_105234882_DP_0.018[rep(seq_len(nrow(chr4_105234882_DP_0.018)), each = 10), ]
+chr4_105234882_DP_0.018 <- cbind(chr4_105234882_DP_0.018, new_col = vec7)
+colnames(chr4_105234882_DP_0.018)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.018)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.018)<-c(61:70)
+
+chr4_105234882_DP_0.014 <- subset(AF_DP_2001413_0.014, rownames(AF_DP_2001413_0.014) %in% 'chr4_105234882')
+chr4_105234882_DP_0.014<- t(chr4_105234882_DP_0.014) #transpose
+chr4_105234882_DP_0.014 <- subset(chr4_105234882_DP_0.014,rownames(chr4_105234882_DP_0.014) %in% 'DP_0.014')
+chr4_105234882_DP_0.014 <-chr4_105234882_DP_0.014[rep(seq_len(nrow(chr4_105234882_DP_0.014)), each = 10), ]
+chr4_105234882_DP_0.014 <- cbind(chr4_105234882_DP_0.014, new_col = vec8)
+colnames(chr4_105234882_DP_0.014)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.014)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.014)<-c(71:80)
+
+chr4_105234882_DP_0.007 <- subset(AF_DP_2001413_0.007, rownames(AF_DP_2001413_0.007) %in% 'chr4_105234882')
+chr4_105234882_DP_0.007<- t(chr4_105234882_DP_0.007) #transpose
+chr4_105234882_DP_0.007 <- subset(chr4_105234882_DP_0.007,rownames(chr4_105234882_DP_0.007) %in% 'DP_0.007')
+chr4_105234882_DP_0.007 <-chr4_105234882_DP_0.007[rep(seq_len(nrow(chr4_105234882_DP_0.007)), each = 10), ]
+chr4_105234882_DP_0.007 <- cbind(chr4_105234882_DP_0.007, new_col = vec9)
+colnames(chr4_105234882_DP_0.007)[2] <- 'Integer_New'
+colnames(chr4_105234882_DP_0.007)[1] <- 'DP'
+rownames(chr4_105234882_DP_0.007)<-c(81:90)
+
+
+ALL_DP_chr4_105234882 <- rbind(chr4_105234882_DP_0.5,chr4_105234882_DP_0.25,chr4_105234882_DP_0.14,chr4_105234882_DP_0.11,chr4_105234882_DP_0.07,chr4_105234882_DP_0.036,chr4_105234882_DP_0.018,chr4_105234882_DP_0.014,chr4_105234882_DP_0.007)
+rownames(ALL_DP_chr4_105234882)<-(1:90)
+
+view(ALL_DP_chr4_105234882)
+
+ALL_AF_DP_chr4_105234882 <-cbind(ALL_DP_chr4_105234882,ALL_AF_chr4_105234882)
